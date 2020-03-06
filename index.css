@@ -1,6 +1,7 @@
 body {
     display: flex;
     justify-content: space-around;
+    padding: 20px;
 }
 
 .clock {
@@ -12,6 +13,7 @@ body {
     padding: 10px;
     width: 450px;
     background-color: #c77dc7;
+    margin: 20px;
 }
 
 .clock-header {
@@ -29,4 +31,52 @@ body {
 
 .clock-time div {
     width: 200px;
+}
+
+.tabs {
+    display: flex;
+    border: solid black 5px;
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 10px;
+    margin: 20px;
+}
+
+.tab-header {
+    display: flex;
+    list-style: none;
+    width: 400px;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+.tab-header > li{
+  width: 100px;
+  border-top: 2px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 2px solid black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-top: 4px;
+  text-align: center;
+  cursor: pointer;
+  background-color: orange;
+}
+
+.tab-header > li:first-child {
+    border-left: 2px solid black;
+}
+
+.tab-header > li:last-child {
+    border-right: 2px solid black;
+}
+
+.tab-header > li:hover {
+    filter: brightness(110%);
+    color: white;
+}
+
+.active {
+    font-weight: bold;
 }
