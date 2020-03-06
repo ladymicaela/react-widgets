@@ -35,22 +35,31 @@ body {
 
 .tabs {
     display: flex;
-    border: solid black 5px;
+    border: solid rgb(236, 181, 78) 5px;
+    background-color: linen;
     border-radius: 10px;
     flex-direction: column;
     padding: 10px;
     margin: 20px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.tabs-header {
+    text-align: center;
+    margin: 10px;
+    font-size: 40px;
 }
 
 .tab-header {
     display: flex;
     list-style: none;
-    width: 400px;
+    width: 300px;
     justify-content: flex-start;
     padding: 0;
+    margin: 0;
 }
 
-.tab-header > li{
+.tab-header > li {
   width: 100px;
   border-top: 2px solid black;
   border-left: 1px solid black;
@@ -77,6 +86,20 @@ body {
     color: white;
 }
 
-.active {
+li.active {
+    border-bottom: none;
     font-weight: bold;
+}
+
+.tab-content {
+    display: flex;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 295px;
+    background-color: orange;
+    color: white;
 }
