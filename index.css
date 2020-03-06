@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: space-around;
+}
+
+.clock {
+    font-family: 'Sigmar One', cursive;
+    border: solid #800080 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 450px;
+    background-color: #c77dc7;
+}
+
+.clock-header {
+    text-align: center;
+    margin: 10px;
+}
+
+.clock-time, .clock-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    height: 50px;
+}
+
+.clock-time div {
+    width: 200px;
+}
