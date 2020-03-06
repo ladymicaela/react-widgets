@@ -50,6 +50,10 @@ body {
     font-size: 40px;
 }
 
+.tabs-div {
+    margin: 10px;
+}
+
 .tab-header {
     display: flex;
     list-style: none;

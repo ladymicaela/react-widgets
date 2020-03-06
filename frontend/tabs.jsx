@@ -49,7 +49,7 @@ class Tabs extends React.Component {
         return (
             <div className="tabs">
                 <h1 className="tabs-header">React Tabs</h1>
-                <div>
+                <div className="tabs-div">
                     <Headers 
                         selectedTab = {this.state.selectedTab}
                         tabs = {this.props.tabs}
