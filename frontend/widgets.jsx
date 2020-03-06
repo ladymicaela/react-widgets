@@ -1,10 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Root from './root';
 
+import Clock from './clock';
 
+const Widgets = () => (
+    <div>
+        <Clock />
+    </div>
+);
 
-document.addEventListener("DOMContentLoaded", () => {
-    const root = document.getElementById("main");
-    ReactDOM.render(<Root />, root);
-});
+export default Widgets;
