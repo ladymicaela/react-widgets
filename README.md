@@ -1,6 +1,6 @@
 # React Widgets
 
-[Live Link](https://ladymicaela.github.io/react-widgets/index.html)
+[Live Link](https://ladymicaela.github.io/react-widgets/index.html) (_mobile friendly_)
 
 ## Background
 
