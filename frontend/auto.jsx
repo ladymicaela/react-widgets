@@ -52,7 +52,9 @@ class AutoComplete extends React.Component {
 
         return (
             <div className="auto">
+                <h1 className="auto-header">React Autocomplete</h1>
                 <input
+                    className="auto-input"
                     value={this.state.inputVal}
                     onChange={this.handleInput}
                     placeholder='Search...'

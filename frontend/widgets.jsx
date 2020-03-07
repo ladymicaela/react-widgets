@@ -24,10 +24,12 @@ const names = [
 ]
 
 const Widgets = () => (
-    <div>
+    <div className="widgets">
         <Clock />
-        <Tabs tabs={tabs}/>
-        <AutoComplete names={names}/>
+        <div className="interactive">
+            <Tabs tabs={tabs}/>
+            <AutoComplete names={names}/>
+        </div>
     </div>
 );
 
