@@ -71,7 +71,7 @@ class DnD extends React.Component {
 
         return (
             <div className="dnd">
-                <h1>React Drag and Drop</h1>
+                <h1 className="dnd-header">React Drag and Drop</h1>
                 <DragDropContext
                     onDragEnd={this.onDragEnd}
                 >

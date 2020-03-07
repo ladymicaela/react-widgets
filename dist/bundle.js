@@ -405,7 +405,9 @@ var DnD = /*#__PURE__*/function (_React$Component) {
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dnd"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "React Drag and Drop"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_1__["DragDropContext"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "dnd-header"
+      }, "React Drag and Drop"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_1__["DragDropContext"], {
         onDragEnd: this.onDragEnd
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dnd-droppable"
