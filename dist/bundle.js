@@ -468,7 +468,7 @@ var tabs = [{
   title: 'three',
   content: 'I am the third tab'
 }];
-var names = ['Anthony', 'Eddie', 'Jared', 'Jason', 'JP', 'Margaret', 'Micaela', 'Mike', 'Shawn', 'Touba'];
+var names = ['Anthony', 'Christina', 'Eddie', 'Jared', 'Jason', 'JP', 'Margaret', 'Micaela', 'Mike', 'Shawn', 'Touba'];
 
 var Widgets = function Widgets() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

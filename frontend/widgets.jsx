@@ -12,6 +12,7 @@ const tabs = [
 
 const names = [
     'Anthony',
+    'Christina',
     'Eddie',
     'Jared',
     'Jason',
