@@ -3,6 +3,7 @@ import React from 'react';
 import Clock from './clock';
 import Tabs from './tabs';
 import AutoComplete from './auto';
+import DnD from './dnd';
 
 const tabs = [
     {title: 'one' , content: 'I am the first tab'},
@@ -24,12 +25,41 @@ const names = [
     'Touba' 
 ]
 
+const items = {
+    item_1: {
+        id: 1,
+        content: "item 1",
+        order: 0
+    },
+    item_2: {
+        id: 2,
+        content: "item 2",
+        order: 1
+    },
+    item_3: {
+        id: 3,
+        content: "item 3",
+        order: 2
+    },
+    item_4: {
+        id: 4,
+        content: "item 4",
+        order: 3
+    },
+    item_5: {
+        id: 5,
+        content: "item 5",
+        order: 4
+    },
+}
+
 const Widgets = () => (
     <div className="widgets">
         <Clock />
         <div className="interactive">
             <Tabs tabs={tabs}/>
             <AutoComplete names={names}/>
+            <DnD items={items} />
         </div>
     </div>
 );
