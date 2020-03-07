@@ -70,14 +70,15 @@ class DnD extends React.Component {
         let orderedItems = Object.values(this.state.items).sort((a, b) => (a.order > b.order) ? 1 : -1)
 
         return (
-            <div className="container">
+            <div className="dnd">
+                <h1>React Drag and Drop</h1>
                 <DragDropContext
                     onDragEnd={this.onDragEnd}
                 >
-                    <div>
+                    <div className="dnd-droppable">
                         <Droppable droppableId="1">
                             {(provided) => (
-                                <div ref={provided.innerRef} {...provided.droppableProps}>
+                                <div ref={provided.innerRef} {...provided.droppableProps} className="dnd-draggable">
                                     {
                                         orderedItems.map((item, idx) =>
                                             <Draggable draggableId={`${item.id}`} index={idx} key={item.id}>

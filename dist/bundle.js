@@ -404,15 +404,19 @@ var DnD = /*#__PURE__*/function (_React$Component) {
         return a.order > b.order ? 1 : -1;
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_1__["DragDropContext"], {
+        className: "dnd"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "React Drag and Drop"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_1__["DragDropContext"], {
         onDragEnd: this.onDragEnd
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_1__["Droppable"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dnd-droppable"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_1__["Droppable"], {
         droppableId: "1"
       }, function (provided) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({
           ref: provided.innerRef
-        }, provided.droppableProps), orderedItems.map(function (item, idx) {
+        }, provided.droppableProps, {
+          className: "dnd-draggable"
+        }), orderedItems.map(function (item, idx) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_1__["Draggable"], {
             draggableId: "".concat(item.id),
             index: idx,

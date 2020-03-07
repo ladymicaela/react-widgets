@@ -156,3 +156,30 @@ li.active {
     margin: 5px;
     cursor: pointer;
 }
+
+.dnd {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: solid blue 5px;
+    background-color: lightblue;
+    border-radius: 10px;
+}
+
+.dnd-droppable, .dnd-draggable {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    border: solid 3px blue;
+    background-color: lightskyblue;
+    border-radius: 10px;
+    width: 250px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    font-weight: bold;
+}
