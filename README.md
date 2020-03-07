@@ -2,6 +2,8 @@
 
 [Live Link](https://ladymicaela.github.io/react-widgets/index.html) (_mobile friendly_)
 
+![thumbnail](thumbnail.png)
+
 ## Background
 
 I wanted to create a collection of simple widgets that I could use as a reference for future projects.
