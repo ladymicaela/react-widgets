@@ -4,7 +4,13 @@
 
 ## Background
 
-I used React to create a few simple widgets.
+I wanted to create a collection of simple widgets that I could use as a reference for future projects.
+
+Currently the collection contains:
+
+* A Clock
+* Tabs
+* Autocomplete
 
 ## Technologies
 
