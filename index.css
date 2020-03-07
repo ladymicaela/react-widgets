@@ -24,7 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    width: 450px;
+    min-width: 450px;
     background-color: #ca9cca;
     margin: 20px;
 }
@@ -130,6 +130,7 @@ li.active {
     margin: 20px;
     background-color: rgb(195, 240, 195);
     font-family: 'Mali', cursive;
+    min-height: 400px;
 }
 
 .auto-header {
@@ -195,4 +196,23 @@ li.active {
 
 .item:active {
     cursor: -webkit-grabbing; cursor: grabbing;
+}
+
+@media screen and (max-width: 600px) {
+  .interactive {
+    flex-direction: column;
+  }
+
+  .clock {
+      min-width: 300px;
+  }
+
+  .clock-time, .clock-date {
+      font-size: 20px;
+  }
+
+  .clock-time div {
+      display: flex;
+      justify-content: center;
+  }
 }
