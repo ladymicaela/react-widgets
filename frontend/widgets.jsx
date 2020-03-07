@@ -2,7 +2,7 @@ import React from 'react';
 
 import Clock from './clock';
 import Tabs from './tabs';
-import Auto from './auto';
+import AutoComplete from './auto';
 
 const tabs = [
     {title: 'one' , content: 'I am the first tab'},
@@ -27,7 +27,7 @@ const Widgets = () => (
     <div>
         <Clock />
         <Tabs tabs={tabs}/>
-        <Auto names={names}/>
+        <AutoComplete names={names}/>
     </div>
 );
 
