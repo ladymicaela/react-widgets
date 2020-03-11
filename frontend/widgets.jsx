@@ -4,6 +4,7 @@ import Clock from './clock';
 import Tabs from './tabs';
 import AutoComplete from './auto';
 import DnD from './dnd';
+import Weather from './weather';
 
 const tabs = [
     {title: 'one' , content: 'I am the first tab'},
@@ -56,6 +57,7 @@ const items = {
 const Widgets = () => (
     <div className="widgets">
         <Clock />
+        <Weather />
         <div className="interactive">
             <Tabs tabs={tabs}/>
             <AutoComplete names={names}/>
