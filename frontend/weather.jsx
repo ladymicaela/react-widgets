@@ -64,37 +64,37 @@ class Weather extends React.Component {
             const temp = (weather.main.temp - 273.15) * 1.8 + 32;
             let description = weather.weather[0].description
             content = <div className="weather-info">
-                <p>{weather.name}</p>
-                <p>{temp.toFixed(1)}°</p>
-                <p>{description}</p>
+                <div>{weather.name}</div>
+                <div>{temp.toFixed(1)}°</div>
+                <div>{description}</div>
             </div>;
             switch (description) {
                 case description.includes("clear"):
-                    icon = <i class="fas fa-sun"></i>
+                    icon = <i className="fas fa-sun"></i>
                     break;
 
                 case description.includes("clouds"):
-                    icon = <i class="fas fa-cloud"></i>
+                    icon = <i className="fas fa-cloud"></i>
                     break;
 
                 case description.includes("rain"):
-                    <i class="fas fa-cloud-rain"></i>
+                    <i className="fas fa-cloud-rain"></i>
                     break;
 
                 case description.includes("thunderstorm"):
-                    <i class="fas fa-bolt"></i>
+                    <i className="fas fa-bolt"></i>
                     break;
 
                 case description.includes("snow"):
-                    <i class="far fa-snowflake"></i>
+                    <i className="far fa-snowflake"></i>
                     break;
 
                 default:
-                    icon = <i class="fas fa-cloud-sun"></i>
+                    icon = <i className="fas fa-cloud-sun"></i>
                     break;
             }
         } else {
-            content = <div className='loading'>loading weather...</div>;
+            content = <div className='loading'>loading weather...<br/>allow location permissions</div>;
         }
         return (
             <div className="weather-container">

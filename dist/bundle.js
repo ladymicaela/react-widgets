@@ -684,49 +684,49 @@ var Weather = /*#__PURE__*/function (_React$Component) {
         var description = weather.weather[0].description;
         content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "weather-info"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, weather.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, temp.toFixed(1), "\xB0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, description));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, weather.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, temp.toFixed(1), "\xB0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, description));
 
         switch (description) {
           case description.includes("clear"):
             icon = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-              "class": "fas fa-sun"
+              className: "fas fa-sun"
             });
             break;
 
           case description.includes("clouds"):
             icon = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-              "class": "fas fa-cloud"
+              className: "fas fa-cloud"
             });
             break;
 
           case description.includes("rain"):
             react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-              "class": "fas fa-cloud-rain"
+              className: "fas fa-cloud-rain"
             });
             break;
 
           case description.includes("thunderstorm"):
             react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-              "class": "fas fa-bolt"
+              className: "fas fa-bolt"
             });
             break;
 
           case description.includes("snow"):
             react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-              "class": "far fa-snowflake"
+              className: "far fa-snowflake"
             });
             break;
 
           default:
             icon = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-              "class": "fas fa-cloud-sun"
+              className: "fas fa-cloud-sun"
             });
             break;
         }
       } else {
         content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "loading"
-        }, "loading weather...");
+        }, "loading weather...", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "allow location permissions");
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
