@@ -11,6 +11,7 @@ I wanted to create a collection of simple widgets that I could use as a referenc
 Currently the collection contains:
 
 * A Clock
+* Local Weather
 * Tabs
 * Autocomplete
 * Drag and Drog
