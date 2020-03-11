@@ -56,8 +56,10 @@ const items = {
 
 const Widgets = () => (
     <div className="widgets">
-        <Clock />
-        <Weather />
+        <div className="informative">
+            <Clock />
+            <Weather />
+        </div>
         <div className="interactive">
             <Tabs tabs={tabs}/>
             <AutoComplete names={names}/>

@@ -604,9 +604,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -614,19 +614,128 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+var toQueryString = function toQueryString(obj) {
+  var parts = [];
+
+  for (var i in obj) {
+    if (obj.hasOwnProperty(i)) {
+      parts.push("".concat(encodeURIComponent(i), "=").concat(encodeURIComponent(obj[i])));
+    }
+  }
+
+  return parts.join('&');
+};
+
 var Weather = /*#__PURE__*/function (_React$Component) {
   _inherits(Weather, _React$Component);
 
   function Weather(props) {
+    var _this;
+
     _classCallCheck(this, Weather);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Weather).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Weather).call(this, props));
+    _this.state = {
+      weather: null
+    };
+    _this.pollWeather = _this.pollWeather.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Weather, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      navigator.geolocation.getCurrentPosition(this.pollWeather);
+    }
+  }, {
+    key: "pollWeather",
+    value: function pollWeather(location) {
+      var _this2 = this;
+
+      var url = 'https://api.openweathermap.org/data/2.5/weather?';
+      var params = {
+        lat: location.coords.latitude,
+        lon: location.coords.longitude
+      };
+      url += toQueryString(params);
+      var apiKey = 'cb9905234e546d730b3b871e80956204';
+      url += "&APPID=".concat(apiKey);
+      fetch(url).then(function (result) {
+        if (result.ok) {
+          return result.json();
+        } else {
+          throw new Error('Cannot retrieve locale weather.');
+        }
+      }).then(function (result) {
+        _this2.setState({
+          weather: result
+        });
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "I am the weather widget!");
+      var content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+      var icon;
+
+      if (this.state.weather) {
+        var weather = this.state.weather;
+        var temp = (weather.main.temp - 273.15) * 1.8 + 32;
+        var description = weather.weather[0].description;
+        content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "weather-info"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, weather.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, temp.toFixed(1), "\xB0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, description));
+
+        switch (description) {
+          case description.includes("clear"):
+            icon = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+              "class": "fas fa-sun"
+            });
+            break;
+
+          case description.includes("clouds"):
+            icon = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+              "class": "fas fa-cloud"
+            });
+            break;
+
+          case description.includes("rain"):
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+              "class": "fas fa-cloud-rain"
+            });
+            break;
+
+          case description.includes("thunderstorm"):
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+              "class": "fas fa-bolt"
+            });
+            break;
+
+          case description.includes("snow"):
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+              "class": "far fa-snowflake"
+            });
+            break;
+
+          default:
+            icon = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+              "class": "fas fa-cloud-sun"
+            });
+            break;
+        }
+      } else {
+        content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "loading"
+        }, "loading weather...");
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "weather-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "weather-header"
+      }, "React Weather"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "weather"
+      }, content, icon));
     }
   }]);
 
@@ -702,7 +811,9 @@ var items = {
 var Widgets = function Widgets() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "widgets"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_clock__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_weather__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "informative"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_clock__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_weather__WEBPACK_IMPORTED_MODULE_5__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "interactive"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"], {
     tabs: tabs

@@ -12,6 +12,10 @@ body {
     align-items: center;
 }
 
+.informative {
+    display: flex;
+}
+
 .interactive {
     display: flex;
     align-items: center;
@@ -197,6 +201,34 @@ li.active {
 .item:active {
     cursor: -webkit-grabbing; cursor: grabbing;
 }
+
+
+.weather-container {
+    border: solid grey 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    min-width: 250px;
+    background-color: lightgrey;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.weather {
+    display: flex;
+    justify-content: space-between;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: cen;
+}
+
+
+
 
 @media screen and (max-width: 600px) {
   .interactive {
