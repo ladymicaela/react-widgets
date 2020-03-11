@@ -204,13 +204,13 @@ li.active {
 
 
 .weather-container {
-    border: solid grey 5px;
+    border: solid hotpink 5px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     padding: 10px;
     min-width: 250px;
-    background-color: lightgrey;
+    background-color: lightpink;
     margin: 20px;
     display: flex;
     align-items: center;
@@ -247,14 +247,12 @@ li.active {
     justify-content: center;
     width: 20px;
     font-size: 50px;
-    color: goldenrod;
+    color: rgb(233, 90, 161);
 }
 
 
-
-
 @media screen and (max-width: 600px) {
-  .interactive {
+  .interactive, .informative {
     flex-direction: column;
   }
 
