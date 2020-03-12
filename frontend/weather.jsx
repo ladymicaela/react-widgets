@@ -68,31 +68,21 @@ class Weather extends React.Component {
                 <div>{temp.toFixed(1)}°</div>
                 <div>{description}</div>
             </div>;
-            switch (description) {
-                case description.includes("clear"):
-                    icon = <i className="fas fa-sun"></i>
-                    break;
-
-                case description.includes("clouds"):
-                    icon = <i className="fas fa-cloud"></i>
-                    break;
-
-                case description.includes("rain"):
-                    <i className="fas fa-cloud-rain"></i>
-                    break;
-
-                case description.includes("thunderstorm"):
-                    <i className="fas fa-bolt"></i>
-                    break;
-
-                case description.includes("snow"):
-                    <i className="far fa-snowflake"></i>
-                    break;
-
-                default:
-                    icon = <i className="fas fa-cloud-sun"></i>
-                    break;
+            
+            if (description.includes("clear")) {
+                icon = <i className="fas fa-sun"></i>
+            } else if (description.includes("clouds")) {
+                icon = <i className="fas fa-cloud"></i>
+            } else if (description.includes("rain")) {
+                <i className="fas fa-cloud-rain"></i>
+            } else if (description.includes("thunderstorm")) {
+                <i className="fas fa-bolt"></i>
+            } else if (description.includes("snow")) {
+                <i className="far fa-snowflake"></i>
+            } else {
+                icon = <i className="fas fa-cloud-sun"></i>
             }
+                
         } else {
             content = <div className='loading'>loading weather...<br/>allow location permissions</div>;
         }

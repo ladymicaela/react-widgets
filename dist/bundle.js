@@ -686,42 +686,30 @@ var Weather = /*#__PURE__*/function (_React$Component) {
           className: "weather-info"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, weather.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, temp.toFixed(1), "\xB0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, description));
 
-        switch (description) {
-          case description.includes("clear"):
-            icon = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-              className: "fas fa-sun"
-            });
-            break;
-
-          case description.includes("clouds"):
-            icon = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-              className: "fas fa-cloud"
-            });
-            break;
-
-          case description.includes("rain"):
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-              className: "fas fa-cloud-rain"
-            });
-            break;
-
-          case description.includes("thunderstorm"):
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-              className: "fas fa-bolt"
-            });
-            break;
-
-          case description.includes("snow"):
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-              className: "far fa-snowflake"
-            });
-            break;
-
-          default:
-            icon = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-              className: "fas fa-cloud-sun"
-            });
-            break;
+        if (description.includes("clear")) {
+          icon = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-sun"
+          });
+        } else if (description.includes("clouds")) {
+          icon = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-cloud"
+          });
+        } else if (description.includes("rain")) {
+          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-cloud-rain"
+          });
+        } else if (description.includes("thunderstorm")) {
+          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-bolt"
+          });
+        } else if (description.includes("snow")) {
+          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "far fa-snowflake"
+          });
+        } else {
+          icon = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-cloud-sun"
+          });
         }
       } else {
         content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
