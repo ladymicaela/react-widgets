@@ -27,9 +27,17 @@ class Calculator extends React.Component {
 
     handleNumClick(e) {
         let num = e.target.innerHTML;
+        let newDisplay;
         let newString = this.state.string.concat(num);
+        
+        if (this.state.signs.includes(this.state.string[this.state.string.length-1])) {
+            newDisplay = num;
+        } else {
+            newDisplay = this.state.display.concat(num)
+        }
+        
         this.setState({
-            display: num,
+            display: newDisplay,
             string: newString,
             lastSelectedSign: null
         })

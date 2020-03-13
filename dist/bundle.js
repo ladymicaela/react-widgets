@@ -273,9 +273,17 @@ var Calculator = /*#__PURE__*/function (_React$Component) {
     key: "handleNumClick",
     value: function handleNumClick(e) {
       var num = e.target.innerHTML;
+      var newDisplay;
       var newString = this.state.string.concat(num);
+
+      if (this.state.signs.includes(this.state.string[this.state.string.length - 1])) {
+        newDisplay = num;
+      } else {
+        newDisplay = this.state.display.concat(num);
+      }
+
       this.setState({
-        display: num,
+        display: newDisplay,
         string: newString,
         lastSelectedSign: null
       });
