@@ -20,7 +20,8 @@ class Calculator extends React.Component {
     handleClearClick(e) {
         this.setState({
             display: '',
-            string: ''
+            string: '',
+            lastSelectedSign: null
         })
     }
 
@@ -40,7 +41,8 @@ class Calculator extends React.Component {
         if (sign === "=") {
             let result = eval(this.state.string);
             this.setState({
-                display: result
+                display: result,
+                string: ''
             })
         } else {
             let newString = this.state.string.concat(sign);

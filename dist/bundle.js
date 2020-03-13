@@ -265,7 +265,8 @@ var Calculator = /*#__PURE__*/function (_React$Component) {
     value: function handleClearClick(e) {
       this.setState({
         display: '',
-        string: ''
+        string: '',
+        lastSelectedSign: null
       });
     }
   }, {
@@ -287,7 +288,8 @@ var Calculator = /*#__PURE__*/function (_React$Component) {
       if (sign === "=") {
         var result = eval(this.state.string);
         this.setState({
-          display: result
+          display: result,
+          string: ''
         });
       } else {
         var newString = this.state.string.concat(sign);
