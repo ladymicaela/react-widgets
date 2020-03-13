@@ -15,6 +15,7 @@ Currently the collection contains:
 * Tabs
 * Autocomplete
 * Drag and Drog
+* Calculator
 
 ## Technologies
 
