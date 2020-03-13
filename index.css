@@ -19,6 +19,7 @@ body {
 .interactive {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .clock {
@@ -250,6 +251,83 @@ li.active {
     color: rgb(233, 90, 161);
 }
 
+
+.calculator-container {
+    border: solid #800080 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    min-width: 150px;
+    background-color: #ca9cca;
+    margin: 20px;
+    align-items: center;
+}
+
+.calculator {
+    display: flex;
+}
+
+.calculator-header {
+    text-align: center;
+    margin: 10px;
+}
+
+.calculator-display {
+    width: 193px;
+    height: 20px;
+    border: solid white 5px;
+    border-radius: 5px;
+    background-color: white;
+    text-align: right;
+    margin: 1px 1px 5px 1px;
+    padding: 2px;
+}
+
+.calculator-buttons {
+    display: flex;
+}
+
+.left-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 157px;
+}
+
+.num-buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.num-buttons > button, .sign-buttons > button {
+    width: 50px;
+    height: 50px;
+    margin: 1px;
+    border-radius: 5px;
+    outline: none;
+    border: violet;
+    cursor: pointer;
+}
+
+.sign-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.clear-button, button.button-0 {
+    margin: 1px;
+    width: 153px;
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    border: violet;
+    cursor: pointer;
+}
+
+.selected-sign {
+    background-color: violet;
+    filter: brightness(150%);
+}
 
 @media screen and (max-width: 600px) {
   .interactive, .informative {

@@ -5,6 +5,7 @@ import Tabs from './tabs';
 import AutoComplete from './auto';
 import DnD from './dnd';
 import Weather from './weather';
+import Calculator from './calculator';
 
 const tabs = [
     {title: 'one' , content: 'I am the first tab'},
@@ -64,6 +65,7 @@ const Widgets = () => (
             <Tabs tabs={tabs}/>
             <AutoComplete names={names}/>
             <DnD items={items} />
+            <Calculator />
         </div>
     </div>
 );
