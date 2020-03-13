@@ -262,10 +262,12 @@ li.active {
     background-color: #ca9cca;
     margin: 20px;
     align-items: center;
+    font-family: 'Mali', cursive;
 }
 
 .calculator {
     display: flex;
+    align-content: center;
 }
 
 .calculator-header {
@@ -274,14 +276,18 @@ li.active {
 }
 
 .calculator-display {
-    width: 193px;
-    height: 20px;
-    border: solid white 5px;
+    width: 200px;
+    height: 25px;
+    border: solid white 2px;
     border-radius: 5px;
     background-color: white;
     text-align: right;
     margin: 1px 1px 5px 1px;
     padding: 2px;
+}
+
+.calculator-display > span {
+    margin: 0 10px;
 }
 
 .calculator-buttons {
@@ -309,6 +315,8 @@ li.active {
     cursor: pointer;
     box-shadow: 0 5px rgb(160, 84, 160);
     font-weight: bold;
+    font-family: 'Mali', cursive;
+    font-size: 30px;
 }
 
 .num-buttons > button:active, .sign-buttons > button:active {
@@ -331,6 +339,8 @@ li.active {
     border: violet;
     cursor: pointer;
     font-weight: bold;
+    font-family: 'Mali', cursive;
+    font-size: 30px;
 }
 
 .clear-button:active, .button.button-0:active {

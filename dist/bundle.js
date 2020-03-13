@@ -317,7 +317,7 @@ var Calculator = /*#__PURE__*/function (_React$Component) {
         className: "calcuator"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "calculator-display"
-      }, display), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, display)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "calculator-buttons"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "left-buttons"
