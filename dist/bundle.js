@@ -313,7 +313,7 @@ var Calculator = /*#__PURE__*/function (_React$Component) {
         className: "calculator-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "calculator-header"
-      }, "React Calcuator"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "React Calculator"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "calcuator"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "calculator-display"

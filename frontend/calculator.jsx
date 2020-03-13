@@ -59,7 +59,7 @@ class Calculator extends React.Component {
 
         return (
             <div className="calculator-container">
-                <h1 className="calculator-header">React Calcuator</h1>
+                <h1 className="calculator-header">React Calculator</h1>
                 <div className="calcuator">
                     <div className="calculator-display">
                         <span>{display}</span>
