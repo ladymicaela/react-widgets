@@ -848,15 +848,15 @@ var Weather = /*#__PURE__*/function (_React$Component) {
             className: "fas fa-cloud"
           });
         } else if (description.includes("rain")) {
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          icon = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-cloud-rain"
           });
         } else if (description.includes("thunderstorm")) {
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          icon = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-bolt"
           });
         } else if (description.includes("snow")) {
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          icon = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "far fa-snowflake"
           });
         } else {

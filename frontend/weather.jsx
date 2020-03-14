@@ -74,11 +74,11 @@ class Weather extends React.Component {
             } else if (description.includes("clouds")) {
                 icon = <i className="fas fa-cloud"></i>
             } else if (description.includes("rain")) {
-                <i className="fas fa-cloud-rain"></i>
+                icon = <i className="fas fa-cloud-rain"></i>
             } else if (description.includes("thunderstorm")) {
-                <i className="fas fa-bolt"></i>
+                icon = <i className="fas fa-bolt"></i>
             } else if (description.includes("snow")) {
-                <i className="far fa-snowflake"></i>
+                icon = <i className="far fa-snowflake"></i>
             } else {
                 icon = <i className="fas fa-cloud-sun"></i>
             }
