@@ -54,7 +54,6 @@ class DnD extends React.Component {
 
         let draggedItem = `item_`.concat(draggableId)
 
-
         temp[draggedItem] = {
             id: parseInt(draggableId),
             content: temp[draggedItem].content,
@@ -104,7 +103,6 @@ class DnD extends React.Component {
             </div>
         )
     }
-
 
 };
 

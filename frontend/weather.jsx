@@ -24,7 +24,6 @@ class Weather extends React.Component {
         navigator.geolocation.getCurrentPosition(this.pollWeather);
     }
 
-
     pollWeather(location) {
         let url = 'https://api.openweathermap.org/data/2.5/weather?';
         const params = {
@@ -52,7 +51,6 @@ class Weather extends React.Component {
                 });
             }) 
     }
-
 
     render() {
         let content = <div></div>;
@@ -97,6 +95,5 @@ class Weather extends React.Component {
         );
     }
 };
-
 
 export default Weather;

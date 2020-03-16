@@ -2,7 +2,6 @@ import React from 'react';
 
 class Headers extends React.Component {
 
-
     render() {
 
         let selected = this.props.selectedTab;
@@ -26,7 +25,6 @@ class Headers extends React.Component {
         )
     }
 }
-
 
 class Tabs extends React.Component {
 
