@@ -365,7 +365,7 @@ li.active {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    /* font-family: 'Kalam', cursive; */
+    font-family: 'Aleo', serif;
 }
 
 .magic-ball-header {
@@ -417,6 +417,7 @@ li.active {
     align-items: center;
     padding: 2px;
     margin-top: 50px;
+    user-select: none;
 }
 
 .magic-ball-dice-spin {

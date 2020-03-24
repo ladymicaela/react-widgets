@@ -692,7 +692,11 @@ var MagicEightBall = /*#__PURE__*/function (_React$Component) {
       var spinning = spin ? "-spin" : "";
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "magic-ball-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "React Magic 8 Ball"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "magic-ball-header"
+      }, "React Magic 8 Ball"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "magic-ball-info"
+      }, "Ask a question and click the magic 8 ball..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "magic-ball",
         onClick: this.askQuestion
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

@@ -32,7 +32,8 @@ class MagicEightBall extends React.Component {
 
         return (
             <div className="magic-ball-container">
-                <h1>React Magic 8 Ball</h1>
+                <h1 className="magic-ball-header">React Magic 8 Ball</h1>
+                <p className="magic-ball-info">Ask a question and click the magic 8 ball...</p>
                 <div className="magic-ball" onClick={this.askQuestion}>
                     <div className="magic-ball-window">
                         <div className="magic-ball-dice"></div>
