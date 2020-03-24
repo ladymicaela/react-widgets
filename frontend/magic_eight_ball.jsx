@@ -5,7 +5,7 @@ class MagicEightBall extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            response = ""
+            response: ""
         }
     }
 
@@ -22,7 +22,7 @@ class MagicEightBall extends React.Component {
 
     render() {
         return (
-            <div>I am the magic 8 ball component</div>
+            <div></div>
         )
     }
 
