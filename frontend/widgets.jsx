@@ -6,6 +6,7 @@ import AutoComplete from './auto';
 import DnD from './dnd';
 import Weather from './weather';
 import Calculator from './calculator';
+import MagicEigthBall from './magic_eight_ball';
 
 const tabs = [
     {title: 'one' , content: 'I am the first tab'},
@@ -89,6 +90,7 @@ const Widgets = () => (
             <AutoComplete names={names}/>
             <DnD items={items} />
             <Calculator />
+            <MagicEigthBall responses={responses}/>
         </div>
     </div>
 );
