@@ -22,7 +22,19 @@ class MagicEightBall extends React.Component {
 
     render() {
         return (
-            <div></div>
+            <div className="magic-ball-container">
+                <h1>React Magic 8 Ball</h1>
+                <div className="magic-ball">
+                    <div className="magic-ball-window">
+                        <div className="magic-ball-dice">
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
         )
     }
 

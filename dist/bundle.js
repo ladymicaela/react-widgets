@@ -678,7 +678,15 @@ var MagicEightBall = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "magic-ball-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "React Magic 8 Ball"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "magic-ball"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "magic-ball-window"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "magic-ball-dice"
+      }))));
     }
   }]);
 
