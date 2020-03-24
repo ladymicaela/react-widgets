@@ -382,14 +382,16 @@ li.active {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .magic-ball-window {
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     border: solid black 5px;
     border-radius: 50%;
-    background-color: white;
+    background-color: rgb(12, 12, 12);
+    box-shadow: 5px 10px 5px #888888;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -398,13 +400,40 @@ li.active {
 .magic-ball-dice {
     width: 0;
 	height: 0;
-	border-left: 40px solid transparent;
-	border-right: 40px solid transparent;
-    border-bottom: 80px solid blue;
+	border-left: 70px solid transparent;
+	border-right: 70px solid transparent;
+    border-bottom: 140px solid blue;
+    position: absolute;
 }
 
+.magic-ball-response {
+    color: white;
+    font-size: 15px;
+    width: 40px;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    margin-top: 50px;
+}
 
+.magic-ball-dice-spin {
+    animation-name: spin;
+    animation-duration: 2000ms;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;      
+}
 
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
 
 
 
