@@ -1,6 +1,6 @@
 # React Widgets
 
-[Live Link](https://ladymicaela.github.io/react-widgets/index.html) (_mobile friendly_)
+[Live Link](https://ladymicaela.github.io/react-widgets/index.html)
 
 ![thumbnail](thumbnail.png)
 
@@ -16,6 +16,7 @@ Currently the collection contains:
 * Autocomplete
 * Drag and Drog
 * Calculator
+* Magic 8 Ball
 
 ## Technologies
 
