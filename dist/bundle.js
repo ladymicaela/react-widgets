@@ -672,7 +672,14 @@ var MagicEightBall = /*#__PURE__*/function (_React$Component) {
   _createClass(MagicEightBall, [{
     key: "askQuestion",
     value: function askQuestion() {
-      this.answerQuestion();
+      var _this2 = this;
+
+      this.setState({
+        response: "",
+        spin: true
+      }, function () {
+        return setTimeout(_this2.answerQuestion, 2000);
+      });
     }
   }, {
     key: "answerQuestion",
@@ -680,7 +687,8 @@ var MagicEightBall = /*#__PURE__*/function (_React$Component) {
       var responses = this.props.responses;
       var randomResponse = responses[Math.floor(Math.random() * responses.length)];
       this.setState({
-        response: randomResponse
+        response: randomResponse,
+        spin: false
       });
     }
   }, {
@@ -689,7 +697,7 @@ var MagicEightBall = /*#__PURE__*/function (_React$Component) {
       var _this$state = this.state,
           response = _this$state.response,
           spin = _this$state.spin;
-      var spinning = spin ? "-spin" : "";
+      var spinning = spin ? "magic-ball-dice spin" : "magic-ball-dice";
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "magic-ball-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
@@ -702,7 +710,7 @@ var MagicEightBall = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "magic-ball-window"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "magic-ball-dice"
+        className: "".concat(spinning)
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "magic-ball-response"
       }, response))));

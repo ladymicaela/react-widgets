@@ -13,7 +13,13 @@ class MagicEightBall extends React.Component {
     }
 
     askQuestion() {
-        this.answerQuestion();
+        this.setState({
+            response: "",
+            spin: true
+        },
+            () => setTimeout(this.answerQuestion,2000)
+        )
+        ;
     }
 
     answerQuestion() {
@@ -21,6 +27,7 @@ class MagicEightBall extends React.Component {
         let randomResponse = responses[Math.floor(Math.random() * responses.length)];
         this.setState({
             response: randomResponse,
+            spin: false
         })
     }
 
@@ -28,7 +35,7 @@ class MagicEightBall extends React.Component {
 
         const {response, spin} = this.state;
 
-        let spinning = spin ? "-spin" : ""
+        let spinning = spin ? "magic-ball-dice spin" : "magic-ball-dice"
 
         return (
             <div className="magic-ball-container">
@@ -36,7 +43,7 @@ class MagicEightBall extends React.Component {
                 <p className="magic-ball-info">Ask a question and click the magic 8 ball...</p>
                 <div className="magic-ball" onClick={this.askQuestion}>
                     <div className="magic-ball-window">
-                        <div className="magic-ball-dice"></div>
+                        <div className={`${spinning}`}></div>
                         <div className="magic-ball-response">{response}</div>
                     </div>
                 </div>
