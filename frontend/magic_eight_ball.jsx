@@ -1,9 +1,13 @@
 import React from 'react';
 
-class MagicEigthBall extends React.Component {
+class MagicEightBall extends React.Component {
 
     constructor(props) {
         super(props)
+        this.state = {
+            responses = this.props.responses,
+            response = ""
+        }
     }
 
 
@@ -17,4 +21,4 @@ class MagicEigthBall extends React.Component {
 
 };
 
-export default MagicEigthBall;
+export default MagicEightBall;
