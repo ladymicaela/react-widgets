@@ -27,12 +27,18 @@ class Calculator extends React.Component {
     handleNumClick(e) {
         let num = e.target.innerHTML;
         let newDisplay;
-        let newString = this.state.string.concat(num);
+        let newString;
+
+        if (this.state.lastSelectedSign === "=") {
+            newString = num
+        } else {
+            newString = this.state.string.concat(num);
+        }
         
-        if (this.state.signs.includes(this.state.string[this.state.string.length-1])) {
+        if (this.state.signs.includes(this.state.string[this.state.string.length - 1]) || this.state.lastSelectedSign === "=") {
             newDisplay = num;
         } else {
-            newDisplay = this.state.display.concat(num)
+            newDisplay = this.state.display.toString().concat(num)
         }
         
         this.setState({
@@ -49,7 +55,8 @@ class Calculator extends React.Component {
             let result = eval(this.state.string);
             this.setState({
                 display: result,
-                string: ''
+                string: result.toString(),
+                lastSelectedSign: sign
             })
         } else {
             let newString = this.state.string.concat(sign);

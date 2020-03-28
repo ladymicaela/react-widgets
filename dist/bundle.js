@@ -274,12 +274,18 @@ var Calculator = /*#__PURE__*/function (_React$Component) {
     value: function handleNumClick(e) {
       var num = e.target.innerHTML;
       var newDisplay;
-      var newString = this.state.string.concat(num);
+      var newString;
 
-      if (this.state.signs.includes(this.state.string[this.state.string.length - 1])) {
+      if (this.state.lastSelectedSign === "=") {
+        newString = num;
+      } else {
+        newString = this.state.string.concat(num);
+      }
+
+      if (this.state.signs.includes(this.state.string[this.state.string.length - 1]) || this.state.lastSelectedSign === "=") {
         newDisplay = num;
       } else {
-        newDisplay = this.state.display.concat(num);
+        newDisplay = this.state.display.toString().concat(num);
       }
 
       this.setState({
@@ -297,7 +303,8 @@ var Calculator = /*#__PURE__*/function (_React$Component) {
         var result = eval(this.state.string);
         this.setState({
           display: result,
-          string: ''
+          string: result.toString(),
+          lastSelectedSign: sign
         });
       } else {
         var newString = this.state.string.concat(sign);
