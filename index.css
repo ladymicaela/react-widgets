@@ -400,7 +400,7 @@ li.active {
 .magic-ball-window {
     height: 200px;
     width: 200px;
-    border: solid black 5px;
+    border: solid rgb(12, 12, 12) 5px;
     border-radius: 50%;
     background-color: rgb(12, 12, 12);
     box-shadow: 5px 10px 5px #888888;
