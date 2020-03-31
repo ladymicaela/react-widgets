@@ -7,6 +7,7 @@ import DnD from './dnd';
 import Weather from './weather';
 import Calculator from './calculator';
 import MagicEightBall from './magic_eight_ball';
+import Dice from './dice';
 
 const tabs = [
     {title: 'one' , content: 'I am the first tab'},
@@ -91,6 +92,7 @@ const Widgets = () => (
             <DnD items={items} />
             <Calculator />
             <MagicEightBall responses={responses}/>
+            <Dice />
         </div>
     </div>
 );
