@@ -481,9 +481,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -495,15 +495,70 @@ var Dice = /*#__PURE__*/function (_React$Component) {
   _inherits(Dice, _React$Component);
 
   function Dice(props) {
+    var _this;
+
     _classCallCheck(this, Dice);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Dice).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Dice).call(this, props));
+    _this.state = {
+      numDie: 0,
+      total: 0
+    };
+    _this.roll = _this.roll.bind(_assertThisInitialized(_this));
+    _this.handleRoll = _this.handleRoll.bind(_assertThisInitialized(_this));
+    _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Dice, [{
+    key: "handleInput",
+    value: function handleInput(event) {
+      this.setState({
+        numDie: event.target.value
+      });
+    }
+  }, {
+    key: "handleRoll",
+    value: function handleRoll() {
+      var total = this.roll(this.state.numDie, 6);
+      this.setState({
+        total: total
+      });
+    }
+  }, {
+    key: "roll",
+    value: function roll() {
+      var x = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      var dieNum = arguments.length > 1 ? arguments[1] : undefined;
+      var total = 0;
+
+      for (var i = 0; i < x; i++) {
+        total += Math.floor(Math.random() * dieNum) + 1;
+      }
+
+      return total;
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "I am the dice component");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dice-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "dice-header"
+      }, "React Dice Roller"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dice-roller"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-dice-six"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.numDie === 0 ? '' : this.state.numDie,
+        onChange: this.handleInput,
+        placeholder: "Number of dice..."
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleRoll
+      }, "Roll")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dice-roll-total"
+      }, this.state.total === 0 ? '' : this.state.total));
     }
   }]);
 

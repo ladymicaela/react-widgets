@@ -439,6 +439,27 @@ li.active {
     animation-timing-function: linear;      
 }
 
+/* DICE WIDGET STYLING */
+
+.dice-container {
+    display: flex;
+    border: solid rgb(236, 181, 78) 5px;
+    background-color: linen;
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 10px;
+    margin: 20px;
+}
+
+.dice-header {
+    text-align: center;
+    margin: 10px;
+}
+
+
+
+
+
 @keyframes spin {
     from {
         transform:rotate(0deg);
