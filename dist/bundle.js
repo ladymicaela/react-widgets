@@ -548,17 +548,17 @@ var Dice = /*#__PURE__*/function (_React$Component) {
       }, "React Dice Roller"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dice-roller"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-dice-six"
+        className: "fas fa-dice-six fa-spin"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.numDie === 0 ? '' : this.state.numDie,
         onChange: this.handleInput,
-        placeholder: "Number of dice..."
+        placeholder: "# of dice"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleRoll
       }, "Roll")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dice-roll-total"
-      }, this.state.total === 0 ? '' : this.state.total));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Total: "), this.state.total === 0 ? '' : this.state.total));
     }
   }]);
 

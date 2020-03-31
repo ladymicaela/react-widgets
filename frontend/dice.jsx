@@ -41,15 +41,15 @@ class Dice extends React.Component {
             <div className="dice-container">
                 <h1 className="dice-header">React Dice Roller</h1>
                 <div className="dice-roller">
-                    <i className="fas fa-dice-six"></i>
+                    <i className="fas fa-dice-six fa-spin"></i>
                     <input type="text"
                         value={this.state.numDie === 0 ? '' : this.state.numDie}
                         onChange={this.handleInput}
-                        placeholder='Number of dice...'
+                        placeholder='# of dice'
                     />
                     <button onClick={this.handleRoll}>Roll</button>
                 </div>
-                <div className="dice-roll-total">{this.state.total === 0 ? '' : this.state.total}</div>
+                <div className="dice-roll-total"><b>Total: </b>{this.state.total === 0 ? '' : this.state.total}</div>
             </div>
         )
     }
