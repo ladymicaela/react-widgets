@@ -17,6 +17,7 @@ Currently the collection contains:
 * Drag and Drog
 * Calculator
 * Magic 8 Ball
+* Dice Roller
 
 ## Technologies
 
