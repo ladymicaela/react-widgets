@@ -34,7 +34,7 @@ class Dice extends React.Component {
 
         if (this.state.dice.every( dice => dice.amount === 0)) {
             this.setState({
-                error: "Please enter amount of dice you wish to roll"
+                error: "Please enter the amount of dice you wish to roll"
             })
         } else {
             let total = 0;

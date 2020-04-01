@@ -555,5 +555,30 @@ li.active {
       display: flex;
       justify-content: center;
   }
+
+  .dice {
+      flex-direction: column;
+  }
+
+  .dice-buttons {
+      align-self: center;
+      min-width: 100%;
+  }
+
+  .dice-container-footer {
+      flex-direction: column;
+      flex-wrap: wrap;
+  }
+
+  .dice-error {
+      font-size: 14px;
+      width: fit-content;
+      min-height: fit-content;
+      align-self: center;
+  }
+
+  .dice-roll-total {
+      min-width: 100%;
+  }
 }
 
