@@ -605,13 +605,16 @@ var Dice = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this4 = this;
 
+      var _this$state = this.state,
+          dice = _this$state.dice,
+          total = _this$state.total;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dice-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "dice-header"
       }, "React Dice Roller"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dice"
-      }, this.state.dice.map(function (dice, idx) {
+      }, dice.map(function (die, idx) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "dice-roller",
           key: idx
@@ -619,14 +622,14 @@ var Dice = /*#__PURE__*/function (_React$Component) {
           className: "fas fa-dice-six fa-spin"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "dice-type"
-        }, dice.type), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        }, die.type), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
-          value: dice.amount === 0 ? '' : dice.amount,
+          value: die.amount === 0 ? '' : die.amount,
           onChange: _this4.handleInput(idx),
           placeholder: "# to roll"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "dice-total"
-        }, dice.total));
+        }, die.total));
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dice-container-footer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -637,7 +640,7 @@ var Dice = /*#__PURE__*/function (_React$Component) {
         onClick: this.handleClear
       }, "Clear")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dice-roll-total"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Total: "), this.state.total === 0 ? '' : this.state.total)));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Total: "), total === 0 ? '' : total)));
     }
   }]);
 

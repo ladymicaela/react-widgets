@@ -16,7 +16,6 @@ class Dice extends React.Component {
     }
 
     handleInput(idx) {
-
         return (event) => {
             let newDice = Object.assign([], this.state.dice);
     
@@ -43,6 +42,7 @@ class Dice extends React.Component {
             })
             total += sum
         })
+
         this.setState({
             total: total
         })
@@ -50,9 +50,11 @@ class Dice extends React.Component {
 
     roll(x = 1, dieNum) {
         let total = 0;
+
         for (let i = 0; i < x; i++) {
             total += Math.floor(Math.random() * dieNum) + 1
         }
+
         return total
     }
 
@@ -70,25 +72,26 @@ class Dice extends React.Component {
         })
     }
 
-
     render() {
+
+        let {dice, total} = this.state;
 
         return (
             <div className="dice-container">
                 <h1 className="dice-header">React Dice Roller</h1>
                 <div className="dice">
                     {
-                        this.state.dice.map( (dice, idx) => {
+                        dice.map( (die, idx) => {
                             return (
                                 <div className="dice-roller" key={idx}>
                                     <i className="fas fa-dice-six fa-spin"></i>
-                                    <div className="dice-type">{dice.type}</div>
+                                    <div className="dice-type">{die.type}</div>
                                     <input type="text"
-                                        value={dice.amount === 0 ? '' : dice.amount}
+                                        value={die.amount === 0 ? '' : die.amount}
                                         onChange={this.handleInput(idx)}
                                         placeholder='# to roll'
                                     />
-                                    <div className="dice-total">{dice.total}</div>
+                                    <div className="dice-total">{die.total}</div>
                                 </div>
                             )
                         })
@@ -99,12 +102,11 @@ class Dice extends React.Component {
                         <button onClick={this.handleRoll}>Roll</button>
                         <button onClick={this.handleClear}>Clear</button>
                     </div>
-                    <div className="dice-roll-total"><b>Total: </b>{this.state.total === 0 ? '' : this.state.total}</div>
+                    <div className="dice-roll-total"><b>Total: </b>{total === 0 ? '' : total}</div>
                 </div>
             </div>
         )
     }
-
 };
 
 export default Dice;
