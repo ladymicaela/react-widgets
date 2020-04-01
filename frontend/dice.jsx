@@ -5,8 +5,8 @@ class Dice extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            numDie: 0,
-            total: 0
+            total: 0,
+            dice: this.props.dice
         }
 
         this.roll = this.roll.bind(this);
@@ -14,14 +14,26 @@ class Dice extends React.Component {
         this.handleInput = this.handleInput.bind(this);
     }
 
-    handleInput(event) {
-        this.setState({
-            numDie: event.target.value
-        })
+    handleInput(idx) {
+
+        return (event) => {
+            let newDice = Object.assign([], this.state.dice);
+    
+            let newDie = newDice[idx]
+    
+            newDie.amount = event.target.value
+    
+            this.setState({
+                dice: newDice
+            })
+        }
     }
 
     handleRoll() {
-        let total = this.roll(this.state.numDie, 6);
+        let total = 0;
+        this.state.dice.forEach( dice => {
+            total += this.roll(dice.amount, dice.value)
+        })
         this.setState({
             total: total
         })
@@ -37,18 +49,28 @@ class Dice extends React.Component {
 
 
     render() {
+
         return (
             <div className="dice-container">
                 <h1 className="dice-header">React Dice Roller</h1>
-                <div className="dice-roller">
-                    <i className="fas fa-dice-six fa-spin"></i>
-                    <input type="text"
-                        value={this.state.numDie === 0 ? '' : this.state.numDie}
-                        onChange={this.handleInput}
-                        placeholder='# of dice'
-                    />
-                    <button onClick={this.handleRoll}>Roll</button>
+                <div className="dice">
+                    {
+                        this.props.dice.map( (dice, idx) => {
+                            return (
+                                <div className="dice-roller" key={idx}>
+                                    <i className="fas fa-dice-six fa-spin"></i>
+                                    <div className="dice-type">{dice.type}</div>
+                                    <input type="text"
+                                        value={dice.amount === 0 ? '' : dice.amount}
+                                        onChange={this.handleInput(idx)}
+                                        placeholder='# of dice'
+                                    />
+                                </div>
+                            )
+                        })
+                    }
                 </div>
+                <button onClick={this.handleRoll}>Roll</button>
                 <div className="dice-roll-total"><b>Total: </b>{this.state.total === 0 ? '' : this.state.total}</div>
             </div>
         )
@@ -58,3 +80,41 @@ class Dice extends React.Component {
 };
 
 export default Dice;
+
+
+class DiceItem extends React.Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            dice: this.props.dice
+        }
+        this.handleInput = this.handleInput.bind(this);
+    }
+
+    handleInput() {
+        return (event) => {
+            this.setState({
+                amount: event.target.value
+            })
+        }
+    }
+
+
+    render() {
+
+        let dice = this.state.dice;
+
+        return(
+            <div className="dice-roller">
+                <i className="fas fa-dice-six fa-spin"></i>
+                <div className="dice-type">{dice.type}</div>
+                <input type="text"
+                    value={dice.value === 0 ? '' : dice.value}
+                    onChange={this.handleInput}
+                    placeholder='# of dice'
+                />
+            </div>
+        )
+    }
+}

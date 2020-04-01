@@ -501,8 +501,8 @@ var Dice = /*#__PURE__*/function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Dice).call(this, props));
     _this.state = {
-      numDie: 0,
-      total: 0
+      total: 0,
+      dice: _this.props.dice
     };
     _this.roll = _this.roll.bind(_assertThisInitialized(_this));
     _this.handleRoll = _this.handleRoll.bind(_assertThisInitialized(_this));
@@ -512,15 +512,28 @@ var Dice = /*#__PURE__*/function (_React$Component) {
 
   _createClass(Dice, [{
     key: "handleInput",
-    value: function handleInput(event) {
-      this.setState({
-        numDie: event.target.value
-      });
+    value: function handleInput(idx) {
+      var _this2 = this;
+
+      return function (event) {
+        var newDice = Object.assign([], _this2.state.dice);
+        var newDie = newDice[idx];
+        newDie.amount = event.target.value;
+
+        _this2.setState({
+          dice: newDice
+        });
+      };
     }
   }, {
     key: "handleRoll",
     value: function handleRoll() {
-      var total = this.roll(this.state.numDie, 6);
+      var _this3 = this;
+
+      var total = 0;
+      this.state.dice.forEach(function (dice) {
+        total += _this3.roll(dice.amount, dice.value);
+      });
       this.setState({
         total: total
       });
@@ -541,22 +554,31 @@ var Dice = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this4 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dice-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "dice-header"
       }, "React Dice Roller"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dice-roller"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-dice-six fa-spin"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        value: this.state.numDie === 0 ? '' : this.state.numDie,
-        onChange: this.handleInput,
-        placeholder: "# of dice"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "dice"
+      }, this.props.dice.map(function (dice, idx) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "dice-roller",
+          key: idx
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-dice-six fa-spin"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "dice-type"
+        }, dice.type), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "text",
+          value: dice.amount === 0 ? '' : dice.amount,
+          onChange: _this4.handleInput(idx),
+          placeholder: "# of dice"
+        }));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleRoll
-      }, "Roll")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Roll"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dice-roll-total"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Total: "), this.state.total === 0 ? '' : this.state.total));
     }
@@ -567,6 +589,55 @@ var Dice = /*#__PURE__*/function (_React$Component) {
 
 ;
 /* harmony default export */ __webpack_exports__["default"] = (Dice);
+
+var DiceItem = /*#__PURE__*/function (_React$Component2) {
+  _inherits(DiceItem, _React$Component2);
+
+  function DiceItem(props) {
+    var _this5;
+
+    _classCallCheck(this, DiceItem);
+
+    _this5 = _possibleConstructorReturn(this, _getPrototypeOf(DiceItem).call(this, props));
+    _this5.state = {
+      dice: _this5.props.dice
+    };
+    _this5.handleInput = _this5.handleInput.bind(_assertThisInitialized(_this5));
+    return _this5;
+  }
+
+  _createClass(DiceItem, [{
+    key: "handleInput",
+    value: function handleInput() {
+      var _this6 = this;
+
+      return function (event) {
+        _this6.setState({
+          amount: event.target.value
+        });
+      };
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var dice = this.state.dice;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dice-roller"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-dice-six fa-spin"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dice-type"
+      }, dice.type), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: dice.value === 0 ? '' : dice.value,
+        onChange: this.handleInput,
+        placeholder: "# of dice"
+      }));
+    }
+  }]);
+
+  return DiceItem;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /***/ }),
 
@@ -1177,6 +1248,31 @@ var items = {
   }
 };
 var responses = ["It is certain", "It is decidedly so", "Without a doubt", "Yes - definitely", "You may rely on it", "As I see it, yes", "Most likely", "Outlook good", "Yes", "Signs point to yes", "Reply hazy, try again", "Ask again later", "Better not tell you now", "Cannot predict now", "Concentrate and ask again", "Don't count on it", "My reply is no", "My sources say no", "Outlook not so good", "Very doubtful"];
+var dice = [{
+  type: "D4",
+  value: 4,
+  amount: 0
+}, {
+  type: "D6",
+  value: 6,
+  amount: 0
+}, {
+  type: "D8",
+  value: 8,
+  amount: 0
+}, {
+  type: "D10",
+  value: 10,
+  amount: 0
+}, {
+  type: "D12",
+  value: 12,
+  amount: 0
+}, {
+  type: "D20",
+  value: 20,
+  amount: 0
+}];
 
 var Widgets = function Widgets() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1193,7 +1289,9 @@ var Widgets = function Widgets() {
     items: items
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_calculator__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_magic_eight_ball__WEBPACK_IMPORTED_MODULE_7__["default"], {
     responses: responses
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dice__WEBPACK_IMPORTED_MODULE_8__["default"], null)));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dice__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    dice: dice
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Widgets);

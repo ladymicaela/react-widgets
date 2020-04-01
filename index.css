@@ -449,6 +449,7 @@ li.active {
     flex-direction: column;
     padding: 10px;
     margin: 20px;
+    font-family: 'Londrina Solid', cursive;
 }
 
 .dice-header {
@@ -456,10 +457,18 @@ li.active {
     margin: 10px;
 }
 
+.dice {
+    display: flex;
+}
+
 .dice-roller {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.dice-type {
+    margin: 5px;
 }
 
 .dice-roller > i {
@@ -473,8 +482,9 @@ li.active {
     padding: 5px 10px;
     border-radius: 5px;
     width: 50px;
-    text-align: right;
+    text-align: center;
     outline: none;
+    font-family: 'Londrina Solid', cursive;
 }
 
 .dice-roller > button {
@@ -483,6 +493,7 @@ li.active {
     border-radius: 5px;
     outline: none;
     cursor: pointer;
+    font-family: 'Londrina Solid', cursive;
 }
 
 .dice-roll-total {
