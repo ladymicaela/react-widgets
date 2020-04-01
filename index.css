@@ -447,6 +447,7 @@ li.active {
     background-color: linen;
     border-radius: 10px;
     flex-direction: column;
+    align-items: center;
     padding: 10px;
     margin: 20px;
     font-family: 'Londrina Solid', cursive;
@@ -471,6 +472,10 @@ li.active {
     margin: 5px;
 }
 
+.dice-total {
+    margin: 5px;
+}
+
 .dice-roller > i {
     font-size: 50px;
     color: orange;
@@ -487,17 +492,34 @@ li.active {
     font-family: 'Londrina Solid', cursive;
 }
 
-.dice-roller > button {
+.dice-container-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.dice-buttons {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.dice-buttons button {
     margin: 5px;
     font-size: 15px;
     border-radius: 5px;
     outline: none;
     cursor: pointer;
     font-family: 'Londrina Solid', cursive;
+    width: 50%;
 }
+
 
 .dice-roll-total {
     margin: 5px;
+    width: 25%;
+    font-size: 30px;
 }
 
 @keyframes spin {

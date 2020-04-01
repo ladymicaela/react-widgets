@@ -81,12 +81,12 @@ const responses = [
 ]
 
 const dice = [
-    {type: "D4", value: 4, amount: 0},
-    {type: "D6", value: 6, amount: 0},
-    {type: "D8", value: 8, amount: 0},
-    {type: "D10", value: 10, amount: 0},
-    {type: "D12", value: 12, amount: 0},
-    {type: "D20", value: 20, amount: 0},
+    {type: "D4", value: 4, total: 0, amount: 0},
+    {type: "D6", value: 6, total: 0, amount: 0},
+    {type: "D8", value: 8, total: 0, amount: 0},
+    {type: "D10", value: 10, total: 0, amount: 0},
+    {type: "D12", value: 12, total: 0, amount: 0},
+    {type: "D20", value: 20, total: 0, amount: 0},
 ]
 
 const Widgets = () => (

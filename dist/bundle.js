@@ -507,6 +507,7 @@ var Dice = /*#__PURE__*/function (_React$Component) {
     _this.roll = _this.roll.bind(_assertThisInitialized(_this));
     _this.handleRoll = _this.handleRoll.bind(_assertThisInitialized(_this));
     _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
+    _this.handleClear = _this.handleClear.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -531,8 +532,18 @@ var Dice = /*#__PURE__*/function (_React$Component) {
       var _this3 = this;
 
       var total = 0;
-      this.state.dice.forEach(function (dice) {
-        total += _this3.roll(dice.amount, dice.value);
+      var newDice = Object.assign([], this.state.dice);
+      this.state.dice.forEach(function (dice, idx) {
+        var sum = _this3.roll(dice.amount, dice.value);
+
+        var die = newDice[idx];
+        die.total = sum;
+
+        _this3.setState({
+          dice: newDice
+        });
+
+        total += sum;
       });
       this.setState({
         total: total
@@ -552,6 +563,44 @@ var Dice = /*#__PURE__*/function (_React$Component) {
       return total;
     }
   }, {
+    key: "handleClear",
+    value: function handleClear() {
+      this.setState({
+        dice: [{
+          type: "D4",
+          value: 4,
+          total: 0,
+          amount: 0
+        }, {
+          type: "D6",
+          value: 6,
+          total: 0,
+          amount: 0
+        }, {
+          type: "D8",
+          value: 8,
+          total: 0,
+          amount: 0
+        }, {
+          type: "D10",
+          value: 10,
+          total: 0,
+          amount: 0
+        }, {
+          type: "D12",
+          value: 12,
+          total: 0,
+          amount: 0
+        }, {
+          type: "D20",
+          value: 20,
+          total: 0,
+          amount: 0
+        }],
+        total: 0
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this4 = this;
@@ -562,7 +611,7 @@ var Dice = /*#__PURE__*/function (_React$Component) {
         className: "dice-header"
       }, "React Dice Roller"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dice"
-      }, this.props.dice.map(function (dice, idx) {
+      }, this.state.dice.map(function (dice, idx) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "dice-roller",
           key: idx
@@ -574,13 +623,21 @@ var Dice = /*#__PURE__*/function (_React$Component) {
           type: "text",
           value: dice.amount === 0 ? '' : dice.amount,
           onChange: _this4.handleInput(idx),
-          placeholder: "# of dice"
-        }));
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          placeholder: "# to roll"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "dice-total"
+        }, dice.total));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dice-container-footer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dice-buttons"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleRoll
-      }, "Roll"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Roll"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleClear
+      }, "Clear")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dice-roll-total"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Total: "), this.state.total === 0 ? '' : this.state.total));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Total: "), this.state.total === 0 ? '' : this.state.total)));
     }
   }]);
 
@@ -589,55 +646,6 @@ var Dice = /*#__PURE__*/function (_React$Component) {
 
 ;
 /* harmony default export */ __webpack_exports__["default"] = (Dice);
-
-var DiceItem = /*#__PURE__*/function (_React$Component2) {
-  _inherits(DiceItem, _React$Component2);
-
-  function DiceItem(props) {
-    var _this5;
-
-    _classCallCheck(this, DiceItem);
-
-    _this5 = _possibleConstructorReturn(this, _getPrototypeOf(DiceItem).call(this, props));
-    _this5.state = {
-      dice: _this5.props.dice
-    };
-    _this5.handleInput = _this5.handleInput.bind(_assertThisInitialized(_this5));
-    return _this5;
-  }
-
-  _createClass(DiceItem, [{
-    key: "handleInput",
-    value: function handleInput() {
-      var _this6 = this;
-
-      return function (event) {
-        _this6.setState({
-          amount: event.target.value
-        });
-      };
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var dice = this.state.dice;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dice-roller"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-dice-six fa-spin"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dice-type"
-      }, dice.type), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        value: dice.value === 0 ? '' : dice.value,
-        onChange: this.handleInput,
-        placeholder: "# of dice"
-      }));
-    }
-  }]);
-
-  return DiceItem;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /***/ }),
 
@@ -1251,26 +1259,32 @@ var responses = ["It is certain", "It is decidedly so", "Without a doubt", "Yes 
 var dice = [{
   type: "D4",
   value: 4,
+  total: 0,
   amount: 0
 }, {
   type: "D6",
   value: 6,
+  total: 0,
   amount: 0
 }, {
   type: "D8",
   value: 8,
+  total: 0,
   amount: 0
 }, {
   type: "D10",
   value: 10,
+  total: 0,
   amount: 0
 }, {
   type: "D12",
   value: 12,
+  total: 0,
   amount: 0
 }, {
   type: "D20",
   value: 20,
+  total: 0,
   amount: 0
 }];
 
