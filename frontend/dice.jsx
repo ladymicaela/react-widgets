@@ -6,7 +6,8 @@ class Dice extends React.Component {
         super(props)
         this.state = {
             total: 0,
-            dice: this.props.dice
+            dice: this.props.dice,
+            error: ''
         }
 
         this.roll = this.roll.bind(this);
@@ -30,22 +31,31 @@ class Dice extends React.Component {
     }
 
     handleRoll() {
-        let total = 0;
-        let newDice = Object.assign([], this.state.dice);
 
-        this.state.dice.forEach( (dice,idx) => {
-            let sum = this.roll(dice.amount, dice.value)
-            let die = newDice[idx];
-            die.total = sum;
+        if (this.state.dice.every( dice => dice.amount === 0)) {
             this.setState({
-                dice: newDice
+                error: "Please enter amount of dice you wish to roll"
             })
-            total += sum
-        })
+        } else {
+            let total = 0;
+            let newDice = Object.assign([], this.state.dice);
+    
+            this.state.dice.forEach( (dice,idx) => {
+                let sum = this.roll(dice.amount, dice.value)
+                let die = newDice[idx];
+                die.total = sum;
+                this.setState({
+                    dice: newDice,
+                    error: ''
+                })
+                total += sum
+            })
+    
+            this.setState({
+                total: total
+            })
+        }
 
-        this.setState({
-            total: total
-        })
     }
 
     roll(x = 1, dieNum) {
@@ -74,7 +84,7 @@ class Dice extends React.Component {
 
     render() {
 
-        let {dice, total} = this.state;
+        let {dice, total, error} = this.state;
 
         return (
             <div className="dice-container">
@@ -102,6 +112,7 @@ class Dice extends React.Component {
                         <button onClick={this.handleRoll}>Roll</button>
                         <button onClick={this.handleClear}>Clear</button>
                     </div>
+                    <div className="dice-error">{error}</div>
                     <div className="dice-roll-total"><b>Total: </b>{total === 0 ? '' : total}</div>
                 </div>
             </div>

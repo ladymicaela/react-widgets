@@ -520,10 +520,19 @@ li.active {
     width: 50%;
 }
 
+.dice-error {
+    margin: 5px;
+    width: 30%;
+    color: red;
+    text-align: center;
+    min-height: 40px;
+}
+
 .dice-roll-total {
     margin: 5px;
     width: 25%;
     font-size: 30px;
+    align-self: center;
 }
 
 /* MOBILE DEVICE STYLING */

@@ -502,7 +502,8 @@ var Dice = /*#__PURE__*/function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Dice).call(this, props));
     _this.state = {
       total: 0,
-      dice: _this.props.dice
+      dice: _this.props.dice,
+      error: ''
     };
     _this.roll = _this.roll.bind(_assertThisInitialized(_this));
     _this.handleRoll = _this.handleRoll.bind(_assertThisInitialized(_this));
@@ -531,23 +532,32 @@ var Dice = /*#__PURE__*/function (_React$Component) {
     value: function handleRoll() {
       var _this3 = this;
 
-      var total = 0;
-      var newDice = Object.assign([], this.state.dice);
-      this.state.dice.forEach(function (dice, idx) {
-        var sum = _this3.roll(dice.amount, dice.value);
-
-        var die = newDice[idx];
-        die.total = sum;
-
-        _this3.setState({
-          dice: newDice
+      if (this.state.dice.every(function (dice) {
+        return dice.amount === 0;
+      })) {
+        this.setState({
+          error: "Please enter amount of dice you wish to roll"
         });
+      } else {
+        var total = 0;
+        var newDice = Object.assign([], this.state.dice);
+        this.state.dice.forEach(function (dice, idx) {
+          var sum = _this3.roll(dice.amount, dice.value);
 
-        total += sum;
-      });
-      this.setState({
-        total: total
-      });
+          var die = newDice[idx];
+          die.total = sum;
+
+          _this3.setState({
+            dice: newDice,
+            error: ''
+          });
+
+          total += sum;
+        });
+        this.setState({
+          total: total
+        });
+      }
     }
   }, {
     key: "roll",
@@ -607,7 +617,8 @@ var Dice = /*#__PURE__*/function (_React$Component) {
 
       var _this$state = this.state,
           dice = _this$state.dice,
-          total = _this$state.total;
+          total = _this$state.total,
+          error = _this$state.error;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dice-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
@@ -639,6 +650,8 @@ var Dice = /*#__PURE__*/function (_React$Component) {
       }, "Roll"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleClear
       }, "Clear")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dice-error"
+      }, error), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dice-roll-total"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Total: "), total === 0 ? '' : total)));
     }
