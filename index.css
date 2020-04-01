@@ -439,6 +439,15 @@ li.active {
     animation-timing-function: linear;      
 }
 
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
 /* DICE WIDGET STYLING */
 
 .dice-container {
@@ -468,11 +477,7 @@ li.active {
     align-items: center;
 }
 
-.dice-type {
-    margin: 5px;
-}
-
-.dice-total {
+.dice-type, .dice-total {
     margin: 5px;
 }
 
@@ -515,20 +520,10 @@ li.active {
     width: 50%;
 }
 
-
 .dice-roll-total {
     margin: 5px;
     width: 25%;
     font-size: 30px;
-}
-
-@keyframes spin {
-    from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform:rotate(360deg);
-    }
 }
 
 /* MOBILE DEVICE STYLING */
