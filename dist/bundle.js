@@ -1068,7 +1068,7 @@ var Notes = /*#__PURE__*/function (_React$Component) {
         className: "notes-input",
         value: this.state.input,
         onChange: this.handleChange,
-        placeholder: "type note here"
+        placeholder: "enter note here"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit,
         className: "notes-button"

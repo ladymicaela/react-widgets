@@ -87,7 +87,7 @@ class Notes extends React.Component {
                             <input type="text" className="notes-input"
                                 value={this.state.input}
                                 onChange={this.handleChange}
-                                placeholder="type note here"
+                                placeholder="enter note here"
                             />
                             <button onClick={this.handleSubmit} className="notes-button"><i className="fas fa-plus"></i></button>
                         </div>
