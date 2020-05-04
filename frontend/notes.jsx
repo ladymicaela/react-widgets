@@ -23,7 +23,8 @@ class Notes extends React.Component {
 
         if (remainingChars == 0 ) {
             this.setState({
-                errors: "cannot exceed 50 characters"
+                errors: "cannot exceed 50 characters",
+                charCounter: remainingChars
             })
             return
         }
@@ -81,6 +82,7 @@ class Notes extends React.Component {
                     <div className="notes-form-container">
                         <div className="notes-errors">{this.state.errors}</div>
                         <div className="notes-form">
+                            <div className="note-charcounter">{this.state.charCounter}</div>
                             <input type="text" className="notes-input"
                                 value={this.state.input}
                                 onChange={this.handleChange}

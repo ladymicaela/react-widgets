@@ -997,7 +997,8 @@ var Notes = /*#__PURE__*/function (_React$Component) {
 
       if (remainingChars == 0) {
         this.setState({
-          errors: "cannot exceed 50 characters"
+          errors: "cannot exceed 50 characters",
+          charCounter: remainingChars
         });
         return;
       }
@@ -1059,7 +1060,9 @@ var Notes = /*#__PURE__*/function (_React$Component) {
         className: "notes-errors"
       }, this.state.errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "notes-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "note-charcounter"
+      }, this.state.charCounter), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         className: "notes-input",
         value: this.state.input,
