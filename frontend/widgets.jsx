@@ -8,6 +8,7 @@ import Weather from './weather';
 import Calculator from './calculator';
 import MagicEightBall from './magic_eight_ball';
 import Dice from './dice';
+import Notes from './notes';
 
 const tabs = [
     {title: 'one' , content: 'I am the first tab'},
@@ -102,6 +103,7 @@ const Widgets = () => (
             <Calculator />
             <MagicEightBall responses={responses}/>
             <Dice dice={dice}/>
+            <Notes />
         </div>
     </div>
 );

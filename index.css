@@ -535,6 +535,28 @@ li.active {
     align-self: center;
 }
 
+/* NOTES WIDGET STYLING */
+
+.notes-container {
+    display: flex;
+    flex-direction: column;
+    border: solid green 5px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    background-color: rgb(195, 240, 195);
+    font-family: 'Gaegu', cursive;
+    min-height: 400px;
+    min-width: 400px;
+}
+
+.notes-header {
+    text-align: center;
+    margin: 10px;
+    font-size: 50px;
+}
+
+
 /* MOBILE DEVICE STYLING */
 
 @media screen and (max-width: 600px) {

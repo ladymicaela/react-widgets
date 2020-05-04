@@ -937,6 +937,131 @@ var MagicEightBall = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
+/***/ "./frontend/notes.jsx":
+/*!****************************!*\
+  !*** ./frontend/notes.jsx ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var Notes = /*#__PURE__*/function (_React$Component) {
+  _inherits(Notes, _React$Component);
+
+  function Notes(props) {
+    var _this;
+
+    _classCallCheck(this, Notes);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Notes).call(this, props));
+    _this.state = {
+      notes: [],
+      input: ""
+    };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleRemove = _this.handleRemove.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Notes, [{
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.setState({
+        input: event.target.value
+      });
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(event) {
+      event.preventDefault();
+      var noteBody = this.state.input;
+      var temp = this.state.notes;
+      temp.push(noteBody);
+      this.setState({
+        notes: temp,
+        input: ""
+      });
+    }
+  }, {
+    key: "handleRemove",
+    value: function handleRemove(idx) {
+      var temp = [];
+      this.state.notes.forEach(function (note, i) {
+        if (i != idx) {
+          temp.push(note);
+        }
+      });
+      this.setState({
+        notes: temp
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "notes-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "notes-header"
+      }, "React Notes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "notes"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.input,
+        onChange: this.handleChange,
+        placeholder: "type note here"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-plus"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "note-items"
+      }, this.state.notes.map(function (note, idx) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: idx,
+          className: "note-item"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "far fa-times-circle",
+          onClick: function onClick() {
+            return _this2.handleRemove(idx);
+          }
+        })), note);
+      }))));
+    }
+  }]);
+
+  return Notes;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Notes);
+
+/***/ }),
+
 /***/ "./frontend/tabs.jsx":
 /*!***************************!*\
   !*** ./frontend/tabs.jsx ***!
@@ -1224,6 +1349,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _calculator__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./calculator */ "./frontend/calculator.jsx");
 /* harmony import */ var _magic_eight_ball__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./magic_eight_ball */ "./frontend/magic_eight_ball.jsx");
 /* harmony import */ var _dice__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./dice */ "./frontend/dice.jsx");
+/* harmony import */ var _notes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./notes */ "./frontend/notes.jsx");
+
 
 
 
@@ -1321,7 +1448,7 @@ var Widgets = function Widgets() {
     responses: responses
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dice__WEBPACK_IMPORTED_MODULE_8__["default"], {
     dice: dice
-  })));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_notes__WEBPACK_IMPORTED_MODULE_9__["default"], null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Widgets);
