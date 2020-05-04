@@ -18,6 +18,7 @@ Currently the collection contains:
 * Calculator
 * Magic 8 Ball
 * Dice Roller
+* Notes
 
 ## Technologies
 
