@@ -539,6 +539,7 @@ li.active {
 
 .notes-container {
     display: flex;
+    align-items: center;
     flex-direction: column;
     border: solid green 5px;
     border-radius: 10px;
@@ -547,7 +548,8 @@ li.active {
     background-color: rgb(195, 240, 195);
     font-family: 'Gaegu', cursive;
     min-height: 400px;
-    min-width: 400px;
+    min-width: 430x;
+    width: 430px;
 }
 
 .notes-header {
@@ -602,6 +604,8 @@ li.active {
 .note-items {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     margin: 10px 0;
 }
 
@@ -614,9 +618,10 @@ li.active {
     box-shadow: 2px 5px 4px 3px #888888;
     opacity: .8;
     padding: 2px;
-    margin: 0 5px;
+    margin: 5px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .note-item-remove {
@@ -624,6 +629,7 @@ li.active {
     align-items: center;
     justify-content: flex-end;
     margin: 2px;
+    cursor: pointer;
 }
 
 .note-body {

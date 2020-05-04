@@ -7,7 +7,8 @@ class Notes extends React.Component {
         this.state = {
             notes: [],
             input: "",
-            errors: ""
+            errors: "",
+            charCounter: 50
         }
 
         this.handleChange = this.handleChange.bind(this)
@@ -16,8 +17,21 @@ class Notes extends React.Component {
     }
 
     handleChange(event) {
+
+        let val = event.target.value
+        let remainingChars = 50 - val.length
+
+        if (remainingChars == 0 ) {
+            this.setState({
+                errors: "cannot exceed 50 characters"
+            })
+            return
+        }
+
         this.setState({
-            input: event.target.value
+            input: val,
+            charCounter: remainingChars,
+            errors: ""
         })
     }
 

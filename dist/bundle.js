@@ -980,7 +980,8 @@ var Notes = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       notes: [],
       input: "",
-      errors: ""
+      errors: "",
+      charCounter: 50
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
@@ -991,8 +992,20 @@ var Notes = /*#__PURE__*/function (_React$Component) {
   _createClass(Notes, [{
     key: "handleChange",
     value: function handleChange(event) {
+      var val = event.target.value;
+      var remainingChars = 50 - val.length;
+
+      if (remainingChars == 0) {
+        this.setState({
+          errors: "cannot exceed 50 characters"
+        });
+        return;
+      }
+
       this.setState({
-        input: event.target.value
+        input: val,
+        charCounter: remainingChars,
+        errors: ""
       });
     }
   }, {
