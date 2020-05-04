@@ -979,7 +979,8 @@ var Notes = /*#__PURE__*/function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Notes).call(this, props));
     _this.state = {
       notes: [],
-      input: ""
+      input: "",
+      errors: ""
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
@@ -999,11 +1000,20 @@ var Notes = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(event) {
       event.preventDefault();
       var noteBody = this.state.input;
+
+      if (noteBody.length == 0) {
+        this.setState({
+          errors: "note cannot be blank"
+        });
+        return;
+      }
+
       var temp = this.state.notes;
       temp.push(noteBody);
       this.setState({
         notes: temp,
-        input: ""
+        input: "",
+        errors: ""
       });
     }
   }, {
@@ -1030,27 +1040,39 @@ var Notes = /*#__PURE__*/function (_React$Component) {
         className: "notes-header"
       }, "React Notes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "notes"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "notes-form-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "notes-errors"
+      }, this.state.errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "notes-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
+        className: "notes-input",
         value: this.state.input,
         onChange: this.handleChange,
         placeholder: "type note here"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.handleSubmit
+        onClick: this.handleSubmit,
+        className: "notes-button"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-plus"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "note-items"
       }, this.state.notes.map(function (note, idx) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: idx,
           className: "note-item"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "note-item-remove"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "far fa-times-circle",
           onClick: function onClick() {
             return _this2.handleRemove(idx);
           }
-        })), note);
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "note-body"
+        }, note));
       }))));
     }
   }]);

@@ -556,6 +556,81 @@ li.active {
     font-size: 50px;
 }
 
+.notes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notes-form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-errors {
+    height: 20px;
+    color: red;
+    text-align: center;
+}
+
+.notes-form {
+    display: flex;
+}
+
+.notes-input {
+    width: 250px;
+    border: solid green 2px;
+    border-radius: 5px;
+    font-family: 'Gaegu', cursive;
+    font-size: 18px;
+    height: 20px;
+    outline: none;
+    padding: 5px;
+    margin: 5px;
+}
+
+.notes-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: green;
+    font-size: 20px;
+    outline: none;
+}
+
+.note-items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+.note-item {
+    width: 100px;
+    height: 100px;
+    border: solid 2px yellow;
+    border-radius: 3px;
+    background-color: yellow;
+    box-shadow: 2px 5px 4px 3px #888888;
+    opacity: .8;
+    padding: 2px;
+    margin: 0 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.note-item-remove {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 2px;
+}
+
+.note-body {
+    display: flex;
+    padding: 0 2px;
+}
+
 
 /* MOBILE DEVICE STYLING */
 
