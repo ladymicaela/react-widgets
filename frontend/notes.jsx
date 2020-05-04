@@ -56,7 +56,8 @@ class Notes extends React.Component {
         this.setState({
             notes: temp,
             input: "",
-            errors: ""
+            errors: "",
+            charCounter: 50
         })
     }
 

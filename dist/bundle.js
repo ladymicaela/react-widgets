@@ -1027,7 +1027,8 @@ var Notes = /*#__PURE__*/function (_React$Component) {
       this.setState({
         notes: temp,
         input: "",
-        errors: ""
+        errors: "",
+        charCounter: 50
       });
     }
   }, {
