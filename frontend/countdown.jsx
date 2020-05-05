@@ -84,35 +84,41 @@ class Countdown extends React.Component {
     }
 
     render() {
+
+        let {input, errors, inputDate, countdowns} = this.state
+
         return (
             <div className="countdown-container">
                 <h1 className="countdown-header">React Countdown</h1>
-                <div className="countdown-errors">{this.state.errors}</div>
+                <div className="countdown-errors">{errors}</div>
                 <div className="countdown-form-container">
                     <label>Event: 
                         <input type="text" 
                             onChange={this.handleChange('input')}
                             className="countdown-event-input"
-                            value={this.state.input}
+                            value={input}
                         />
                     </label>
                     <label>Date: 
                         <input type="date" 
                             className="countdown-date-picker"
                             onChange={this.handleChange('inputDate')}
-                            value={this.state.inputDate}
+                            value={inputDate}
                         />
                     </label>
                     <button onClick={this.handleSubmit} className="countdown-button"><i className="fas fa-calendar-plus"></i></button>
                 </div>
                 <div className="countdown-events">
                     {
-                        this.state.countdowns.map( (event,idx) => {
+                        countdowns.map( (event,idx) => {
+                            let {name, date, occurred, countdown} = event
                             return (
                                 <div className="countdown-event" key={idx}>
-                                    <div className="countdown-event-name">{event.name}</div>
-                                    <div className="countdown-event-date">{event.date}</div>
-                                    <div className="countdown-event-countdown">{ event.occurred ? "🥳" : `${event.countdown} ${event.countdown < 2 ? "day" : "days"}`}</div>
+                                    <div className="countdown-event-name">{name}</div>
+                                    <div className="countdown-event-date">{date}</div>
+                                    <div className="countdown-event-countdown">
+                                        { occurred ? "🥳" : `${countdown} ${countdown < 2 ? "day" : "days"}`}
+                                    </div>
                                 </div>
                             )
                         })

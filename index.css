@@ -659,7 +659,7 @@ li.active {
     font-family: 'Life Savers', cursive;
     padding: 5px 5px 10px 5px;
     margin: 20px;
-    width: 500px;
+    width: 520px;
     min-height: 180px;
 }
 
@@ -703,6 +703,7 @@ li.active {
     width: 40px;
     height: 40px;
     cursor: pointer;
+    color: blue;
 }
 
 .countdown-button:hover {

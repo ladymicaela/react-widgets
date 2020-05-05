@@ -577,24 +577,29 @@ var Countdown = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this$state = this.state,
+          input = _this$state.input,
+          errors = _this$state.errors,
+          inputDate = _this$state.inputDate,
+          countdowns = _this$state.countdowns;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "countdown-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "countdown-header"
       }, "React Countdown"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "countdown-errors"
-      }, this.state.errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "countdown-form-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Event:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         onChange: this.handleChange('input'),
         className: "countdown-event-input",
-        value: this.state.input
+        value: input
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Date:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "date",
         className: "countdown-date-picker",
         onChange: this.handleChange('inputDate'),
-        value: this.state.inputDate
+        value: inputDate
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit,
         className: "countdown-button"
@@ -602,17 +607,21 @@ var Countdown = /*#__PURE__*/function (_React$Component) {
         className: "fas fa-calendar-plus"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "countdown-events"
-      }, this.state.countdowns.map(function (event, idx) {
+      }, countdowns.map(function (event, idx) {
+        var name = event.name,
+            date = event.date,
+            occurred = event.occurred,
+            countdown = event.countdown;
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "countdown-event",
           key: idx
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "countdown-event-name"
-        }, event.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "countdown-event-date"
-        }, event.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "countdown-event-countdown"
-        }, event.occurred ? "🥳" : "".concat(event.countdown, " ").concat(event.countdown < 2 ? "day" : "days")));
+        }, occurred ? "🥳" : "".concat(countdown, " ").concat(countdown < 2 ? "day" : "days")));
       })));
     }
   }]);
