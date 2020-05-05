@@ -9,6 +9,7 @@ import Calculator from './calculator';
 import MagicEightBall from './magic_eight_ball';
 import Dice from './dice';
 import Notes from './notes';
+import Countdown from './countdown';
 
 const tabs = [
     {title: 'one' , content: 'I am the first tab'},
@@ -104,6 +105,7 @@ const Widgets = () => (
             <MagicEightBall responses={responses}/>
             <Dice dice={dice}/>
             <Notes />
+            <Countdown />
         </div>
     </div>
 );
