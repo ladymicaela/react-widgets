@@ -473,6 +473,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -481,9 +483,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -495,15 +497,87 @@ var Countdown = /*#__PURE__*/function (_React$Component) {
   _inherits(Countdown, _React$Component);
 
   function Countdown(props) {
+    var _this;
+
     _classCallCheck(this, Countdown);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Countdown).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Countdown).call(this, props));
+    _this.state = {
+      countdowns: [],
+      input: "",
+      date: "",
+      errors: ""
+    };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Countdown, [{
+    key: "handleChange",
+    value: function handleChange(field) {
+      var _this2 = this;
+
+      return function (event) {
+        _this2.setState(_defineProperty({}, field, event.target.value));
+      };
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(event) {
+      event.preventDefault();
+      var eventName = this.state.input;
+
+      if (eventName.length == 0) {
+        this.setState({
+          errors: "please enter in event name"
+        });
+        return;
+      }
+
+      var temp = this.state.events;
+      var eventObj = {
+        name: eventName,
+        date: this.state.date
+      };
+      temp.push(eventObj);
+      this.setState({
+        notes: temp,
+        input: "",
+        errors: ""
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "I am the react countdown");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "countdown-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "countdown-header"
+      }, "React Countdown"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "countdown-form-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Event:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        onChange: this.handleChange('input'),
+        className: "countdown-event-input",
+        value: this.state.input
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Date:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "date",
+        className: "countdown-date-picker",
+        onChange: this.handleChange('date'),
+        value: this.state.date
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleSubmit,
+        className: "countdown-button"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-calendar-plus"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "countdown-events"
+      }, this.state.countdowns.map(function (event, idx) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "countdown-event",
+          key: idx
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, event.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, event.date));
+      })));
     }
   }]);
 

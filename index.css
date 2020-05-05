@@ -647,6 +647,47 @@ li.active {
     padding: 0 2px;
 }
 
+/* COUNTDOWN WIDGET STYLING */
+
+.countdown-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: solid blue 5px;
+    background-color: lightblue;
+    border-radius: 10px;
+    font-family: 'Life Savers', cursive;
+    padding: 10px;
+    margin: 20px;
+    width: 450px;
+}
+
+.countdown-header {
+    text-align: center;
+    margin: 10px;
+}
+
+.countdown-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.countdown-form-container label {
+    font-weight: bold;
+}
+
+.countdown-event-input, .countdown-date-picker {
+    font-family: 'Life Savers', cursive;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+
 
 /* MOBILE DEVICE STYLING */
 
