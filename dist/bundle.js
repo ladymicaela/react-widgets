@@ -505,10 +505,12 @@ var Countdown = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       countdowns: [],
       input: "",
-      date: "",
-      errors: ""
+      inputDate: "",
+      errors: "",
+      currentDate: new Date()
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -526,23 +528,47 @@ var Countdown = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(event) {
       event.preventDefault();
       var eventName = this.state.input;
+      var inputDate = this.state.inputDate;
 
-      if (eventName.length == 0) {
+      if (eventName.length == 0 && inputDate.length == 0) {
+        this.setState({
+          errors: "please enter in event name and date"
+        });
+        return;
+      } else if (eventName.length == 0) {
         this.setState({
           errors: "please enter in event name"
         });
         return;
+      } else if (inputDate.length == 0) {
+        this.setState({
+          errors: "please enter in event date"
+        });
+        return;
       }
 
-      var temp = this.state.events;
+      var temp = this.state.countdowns;
+      var eventDate = new Date(inputDate);
+      var currentDate = this.state.currentDate;
+      var diff = eventDate.getTime() - currentDate.getTime();
+      var timeDiff = diff / (1000 * 3600 * 24);
+      var occurred = false;
+
+      if (timeDiff <= 0) {
+        occurred = true;
+      }
+
       var eventObj = {
         name: eventName,
-        date: this.state.date
+        date: inputDate,
+        countdown: Math.ceil(timeDiff),
+        occurred: occurred
       };
       temp.push(eventObj);
       this.setState({
-        notes: temp,
+        countdowns: temp,
         input: "",
+        inputDate: "",
         errors: ""
       });
     }
@@ -554,6 +580,8 @@ var Countdown = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "countdown-header"
       }, "React Countdown"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "countdown-errors"
+      }, this.state.errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "countdown-form-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Event:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
@@ -563,8 +591,8 @@ var Countdown = /*#__PURE__*/function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Date:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "date",
         className: "countdown-date-picker",
-        onChange: this.handleChange('date'),
-        value: this.state.date
+        onChange: this.handleChange('inputDate'),
+        value: this.state.inputDate
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit,
         className: "countdown-button"
@@ -576,7 +604,7 @@ var Countdown = /*#__PURE__*/function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "countdown-event",
           key: idx
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, event.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, event.date));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, event.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, event.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, event.occurred ? "🥳" : "".concat(event.countdown, " ").concat(event.countdown < 2 ? "day" : "days")));
       })));
     }
   }]);
