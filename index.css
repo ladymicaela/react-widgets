@@ -547,7 +547,7 @@ li.active {
     margin: 20px;
     background-color: rgb(195, 240, 195);
     font-family: 'Gaegu', cursive;
-    min-height: 400px;
+    min-height: 200px;
     min-width: 430x;
     width: 430px;
 }
