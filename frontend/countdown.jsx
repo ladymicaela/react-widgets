@@ -21,7 +21,8 @@ class Countdown extends React.Component {
 
         return (event) => {
             this.setState({
-                [field]: event.target.value
+                [field]: event.target.value,
+                errors: ""
             })
         }
     }
@@ -109,9 +110,9 @@ class Countdown extends React.Component {
                         this.state.countdowns.map( (event,idx) => {
                             return (
                                 <div className="countdown-event" key={idx}>
-                                    <div>{event.name}</div>
-                                    <div>{event.date}</div>
-                                    <div>{ event.occurred ? "🥳" : `${event.countdown} ${event.countdown < 2 ? "day" : "days"}`}</div>
+                                    <div className="countdown-event-name">{event.name}</div>
+                                    <div className="countdown-event-date">{event.date}</div>
+                                    <div className="countdown-event-countdown">{ event.occurred ? "🥳" : `${event.countdown} ${event.countdown < 2 ? "day" : "days"}`}</div>
                                 </div>
                             )
                         })

@@ -520,7 +520,9 @@ var Countdown = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       return function (event) {
-        _this2.setState(_defineProperty({}, field, event.target.value));
+        var _this2$setState;
+
+        _this2.setState((_this2$setState = {}, _defineProperty(_this2$setState, field, event.target.value), _defineProperty(_this2$setState, "errors", ""), _this2$setState));
       };
     }
   }, {
@@ -604,7 +606,13 @@ var Countdown = /*#__PURE__*/function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "countdown-event",
           key: idx
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, event.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, event.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, event.occurred ? "🥳" : "".concat(event.countdown, " ").concat(event.countdown < 2 ? "day" : "days")));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "countdown-event-name"
+        }, event.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "countdown-event-date"
+        }, event.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "countdown-event-countdown"
+        }, event.occurred ? "🥳" : "".concat(event.countdown, " ").concat(event.countdown < 2 ? "day" : "days")));
       })));
     }
   }]);

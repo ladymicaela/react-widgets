@@ -650,22 +650,29 @@ li.active {
 /* COUNTDOWN WIDGET STYLING */
 
 .countdown-container {
-    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     border: solid blue 5px;
     background-color: lightblue;
     border-radius: 10px;
     font-family: 'Life Savers', cursive;
-    padding: 10px;
+    padding: 5px 5px 10px 5px;
     margin: 20px;
     width: 500px;
+    min-height: 180px;
 }
 
 .countdown-header {
     text-align: center;
-    margin: 10px;
+    margin: 10px 10px 5px 10px;
+}
+
+.countdown-errors {
+    height: 20px;
+    color: red;
+    text-align: center;
+    margin: 0 0 5px 0;
 }
 
 .countdown-form-container {
@@ -676,6 +683,7 @@ li.active {
 
 .countdown-form-container label {
     font-weight: bold;
+    margin: 0 5px;
 }
 
 .countdown-event-input, .countdown-date-picker, .countdown-button {
@@ -683,14 +691,61 @@ li.active {
     outline: none;
     padding: 5px;
     border-radius: 5px;
-    margin: 0 5px;
+    margin: 0 2px 10px 2px;
     font-size: 14px;
+}
+
+.countdown-event-input:focus, .countdown-date-picker:focus {
+    border: 2px inset blue;
 }
 
 .countdown-button {
     width: 40px;
     height: 40px;
     cursor: pointer;
+}
+
+.countdown-button:hover {
+    border: 2px inset blue;
+}
+
+.countdown-event {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid blue 2px;
+}
+
+.countdown-event:first-of-type {
+    border-top: solid blue 2px;
+}
+
+.countdown-event-name {
+    font-size: 20px;
+    margin: 5px;
+    width: 280px;
+    text-align: left;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.countdown-event-date {
+    font-size: 20px;
+    margin: 5px;
+    width: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdown-event-countdown {
+    font-size: 20px;
+    margin: 5px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* MOBILE DEVICE STYLING */
