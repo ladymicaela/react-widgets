@@ -19,6 +19,7 @@ Currently the collection contains:
 * Magic 8 Ball
 * Dice Roller
 * Notes
+* Countdown
 
 ## Technologies
 
