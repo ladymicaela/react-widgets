@@ -497,6 +497,10 @@ li.active {
     font-family: 'Londrina Solid', cursive;
 }
 
+.dice-roller > input[type=text]:focus {
+    border: solid 2px orange;
+}
+
 .dice-container-footer {
     display: flex;
     justify-content: space-between;
@@ -518,6 +522,10 @@ li.active {
     cursor: pointer;
     font-family: 'Londrina Solid', cursive;
     width: 50%;
+}
+
+.dice-buttons button:hover {
+    border: solid 2px orange;
 }
 
 .dice-error {
@@ -591,7 +599,6 @@ li.active {
 
 .notes-input {
     width: 250px;
-    border: solid green 2px;
     border-radius: 5px;
     font-family: 'Gaegu', cursive;
     font-size: 18px;
@@ -599,6 +606,10 @@ li.active {
     outline: none;
     padding: 5px;
     margin: 5px;
+}
+
+.notes-input:focus {
+    border: solid green 2px;
 }
 
 .notes-button {
@@ -609,6 +620,10 @@ li.active {
     color: green;
     font-size: 20px;
     outline: none;
+}
+
+.notes-button:hover {
+    border: solid green 2px;
 }
 
 .note-items {
@@ -696,7 +711,7 @@ li.active {
 }
 
 .countdown-event-input:focus, .countdown-date-picker:focus {
-    border: 2px inset blue;
+    border: 2px solid blue;
 }
 
 .countdown-button {
@@ -707,7 +722,7 @@ li.active {
 }
 
 .countdown-button:hover {
-    border: 2px inset blue;
+    border: 2px solid blue;
 }
 
 .countdown-event {
