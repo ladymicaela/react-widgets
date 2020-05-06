@@ -14,11 +14,14 @@ body {
 
 .informative {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .interactive {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
