@@ -97,6 +97,7 @@ class Countdown extends React.Component {
                             onChange={this.handleChange('input')}
                             className="countdown-event-input"
                             value={input}
+                            placeholder="event name"
                         />
                     </label>
                     <label>Date: 

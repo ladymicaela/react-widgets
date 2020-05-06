@@ -594,7 +594,8 @@ var Countdown = /*#__PURE__*/function (_React$Component) {
         type: "text",
         onChange: this.handleChange('input'),
         className: "countdown-event-input",
-        value: input
+        value: input,
+        placeholder: "event name"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Date:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "date",
         className: "countdown-date-picker",
