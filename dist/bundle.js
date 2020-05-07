@@ -207,6 +207,17 @@ var AutoComplete = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
+/***/ "./frontend/bubble_wrap.jsx":
+/*!**********************************!*\
+  !*** ./frontend/bubble_wrap.jsx ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/micaela/Desktop/App Academy/Projects/react-widgets/frontend/bubble_wrap.jsx: Unexpected token (8:23)\n\n\u001b[0m \u001b[90m  6 | \u001b[39m        \u001b[36msuper\u001b[39m(props)\u001b[0m\n\u001b[0m \u001b[90m  7 | \u001b[39m        \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mstate \u001b[33m=\u001b[39m {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 | \u001b[39m            bubbleWrap \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mprops\u001b[33m.\u001b[39mbubbleWrap\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  9 | \u001b[39m        }\u001b[0m\n\u001b[0m \u001b[90m 10 | \u001b[39m    }\u001b[0m\n\u001b[0m \u001b[90m 11 | \u001b[39m\u001b[0m\n    at Object._raise (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:723:17)\n    at Object.raiseWithData (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:716:17)\n    at Object.raise (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:710:17)\n    at Object.unexpected (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:8610:16)\n    at Object.checkExpressionErrors (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:8727:12)\n    at Object.parseMaybeAssign (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:9292:12)\n    at Object.parseMaybeAssign (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:9289:25)\n    at Object.parseExpression (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:9209:23)\n    at Object.parseStatementContent (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:11045:23)\n    at Object.parseStatement (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:10916:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:11490:25)\n    at Object.parseBlockBody (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:11477:10)\n    at Object.parseBlock (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:11461:10)\n    at Object.parseFunctionBody (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:10477:24)\n    at Object.parseFunctionBodyAndFinish (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:10446:10)\n    at Object.parseMethod (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:10408:10)\n    at Object.pushClassMethod (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:11896:30)\n    at Object.parseClassMemberWithIsStatic (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:11813:12)\n    at Object.parseClassMember (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:11755:10)\n    at /Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:11710:14\n    at Object.withTopicForbiddingContext (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:10791:14)\n    at Object.parseClassBody (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:11687:10)\n    at Object.parseClass (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:11661:22)\n    at Object.parseStatementContent (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:10958:21)\n    at Object.parseStatement (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:10916:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:11490:25)\n    at Object.parseBlockBody (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:11477:10)\n    at Object.parseTopLevel (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:10847:10)\n    at Object.parse (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:12452:10)\n    at parse (/Users/micaela/Desktop/App Academy/Projects/react-widgets/node_modules/@babel/parser/lib/index.js:12503:38)");
+
+/***/ }),
+
 /***/ "./frontend/calculator.jsx":
 /*!*********************************!*\
   !*** ./frontend/calculator.jsx ***!
@@ -1565,6 +1576,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dice__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./dice */ "./frontend/dice.jsx");
 /* harmony import */ var _notes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./notes */ "./frontend/notes.jsx");
 /* harmony import */ var _countdown__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./countdown */ "./frontend/countdown.jsx");
+/* harmony import */ var _bubble_wrap__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./bubble_wrap */ "./frontend/bubble_wrap.jsx");
+
 
 
 
@@ -1646,6 +1659,7 @@ var dice = [{
   total: 0,
   amount: 0
 }];
+var bubbleWrap = Array(100).fill(false);
 
 var Widgets = function Widgets() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1664,7 +1678,9 @@ var Widgets = function Widgets() {
     responses: responses
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dice__WEBPACK_IMPORTED_MODULE_8__["default"], {
     dice: dice
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_notes__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_countdown__WEBPACK_IMPORTED_MODULE_10__["default"], null)));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_notes__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_countdown__WEBPACK_IMPORTED_MODULE_10__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_bubble_wrap__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    bubbleWrap: bubbleWrap
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Widgets);

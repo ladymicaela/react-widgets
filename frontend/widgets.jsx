@@ -10,6 +10,7 @@ import MagicEightBall from './magic_eight_ball';
 import Dice from './dice';
 import Notes from './notes';
 import Countdown from './countdown';
+import BubbleWrap from './bubble_wrap';
 
 const tabs = [
     {title: 'one' , content: 'I am the first tab'},
@@ -91,6 +92,8 @@ const dice = [
     {type: "D20", value: 20, total: 0, amount: 0},
 ]
 
+const bubbleWrap = Array(100).fill(false)
+
 const Widgets = () => (
     <div className="widgets">
         <div className="informative">
@@ -106,6 +109,7 @@ const Widgets = () => (
             <Dice dice={dice}/>
             <Notes />
             <Countdown />
+            <BubbleWrap bubbleWrap={bubbleWrap}/>
         </div>
     </div>
 );
