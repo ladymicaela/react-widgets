@@ -7,8 +7,6 @@ class BubbleWrap extends React.Component {
         this.state = {
             bubbleWrap: this.props.bubbleWrap
         }
-
-        // this.handleInflate = this.handleInflate.bind(this)
     }
 
     handlePop(idx) {
@@ -19,16 +17,6 @@ class BubbleWrap extends React.Component {
             bubbleWrap: temp
         })
     }
-
-    // handleInflate(event) {
-
-    //     event.preventDefault()
-
-    //     this.setState({
-    //         bubbleWrap: Array(81).fill(false)
-    //     })
-
-    // }
 
     render() {
         return(
@@ -52,7 +40,6 @@ class BubbleWrap extends React.Component {
                     }
 
                 </div>
-                {/* <button className="inflate-button" onClick={this.handleInflate}>Inflate <i className="fas fa-wind"></i></button> */}
             </div>
         )
     }

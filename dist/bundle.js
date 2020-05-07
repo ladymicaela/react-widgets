@@ -249,8 +249,7 @@ var BubbleWrap = /*#__PURE__*/function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(BubbleWrap).call(this, props));
     _this.state = {
       bubbleWrap: _this.props.bubbleWrap
-    }; // this.handleInflate = this.handleInflate.bind(this)
-
+    };
     return _this;
   }
 
@@ -262,13 +261,7 @@ var BubbleWrap = /*#__PURE__*/function (_React$Component) {
       this.setState({
         bubbleWrap: temp
       });
-    } // handleInflate(event) {
-    //     event.preventDefault()
-    //     this.setState({
-    //         bubbleWrap: Array(81).fill(false)
-    //     })
-    // }
-
+    }
   }, {
     key: "render",
     value: function render() {
