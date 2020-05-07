@@ -767,6 +767,42 @@ li.active {
     justify-content: center;
 }
 
+/* BUBBLE WRAP WIDGET STYLING */
+
+.bubble-wrap-container {
+    border: solid #800080 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 5px 20px 5px;
+    width: 400px;
+    background-color: #ca9cca;
+    margin: 20px;
+    align-items: center;
+    font-family: 'Baloo 2', cursive;
+}
+
+.bubble-wrap-header {
+    text-align: center;
+    margin: 10px;
+    font-size: 40px;
+}
+
+.bubble-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bubble {
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+    margin: 2px;
+    color: purple;
+    cursor: pointer;
+    text-shadow: 2px 2px rgb(160, 84, 160)
+}
+
 /* MOBILE DEVICE STYLING */
 
 @media screen and (max-width: 600px) {

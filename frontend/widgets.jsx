@@ -92,7 +92,7 @@ const dice = [
     {type: "D20", value: 20, total: 0, amount: 0},
 ]
 
-const bubbleWrap = Array(100).fill(false)
+const bubbleWrap = Array(90).fill(false)
 
 const Widgets = () => (
     <div className="widgets">

@@ -1738,7 +1738,7 @@ var dice = [{
   total: 0,
   amount: 0
 }];
-var bubbleWrap = Array(100).fill(false);
+var bubbleWrap = Array(90).fill(false);
 
 var Widgets = function Widgets() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
