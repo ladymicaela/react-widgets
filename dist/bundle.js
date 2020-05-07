@@ -283,7 +283,7 @@ var BubbleWrap = /*#__PURE__*/function (_React$Component) {
       }, this.state.bubbleWrap.map(function (bubble, idx) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: idx,
-          className: "bubble",
+          className: bubble ? "bubble-popped" : "bubble",
           onClick: function onClick() {
             return _this2.handlePop(idx);
           }

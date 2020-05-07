@@ -39,7 +39,7 @@ class BubbleWrap extends React.Component {
                     {
                         this.state.bubbleWrap.map( (bubble,idx) => {
                             return (
-                                <div key={idx} className="bubble" onClick={() => this.handlePop(idx)}>
+                                <div key={idx} className={bubble ? "bubble-popped" : "bubble"} onClick={() => this.handlePop(idx)}>
                                     {
                                         bubble ?
                                             <i className="far fa-circle"></i>

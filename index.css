@@ -793,7 +793,7 @@ li.active {
     flex-wrap: wrap;
 }
 
-.bubble {
+.bubble, .bubble-popped {
     font-size: 40px;
     height: 40px;
     width: 40px;
