@@ -249,7 +249,8 @@ var BubbleWrap = /*#__PURE__*/function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(BubbleWrap).call(this, props));
     _this.state = {
       bubbleWrap: _this.props.bubbleWrap
-    };
+    }; // this.handleInflate = this.handleInflate.bind(this)
+
     return _this;
   }
 
@@ -261,7 +262,13 @@ var BubbleWrap = /*#__PURE__*/function (_React$Component) {
       this.setState({
         bubbleWrap: temp
       });
-    }
+    } // handleInflate(event) {
+    //     event.preventDefault()
+    //     this.setState({
+    //         bubbleWrap: Array(81).fill(false)
+    //     })
+    // }
+
   }, {
     key: "render",
     value: function render() {
@@ -271,7 +278,7 @@ var BubbleWrap = /*#__PURE__*/function (_React$Component) {
         className: "bubble-wrap-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "bubble-wrap-header"
-      }, "React Bubble Wrap"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "React Bubble Wrap"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "click on a bubble to pop it"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bubble-wrap"
       }, this.state.bubbleWrap.map(function (bubble, idx) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1738,7 +1745,7 @@ var dice = [{
   total: 0,
   amount: 0
 }];
-var bubbleWrap = Array(90).fill(false);
+var bubbleWrap = Array(81).fill(false);
 
 var Widgets = function Widgets() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

@@ -784,7 +784,7 @@ li.active {
 
 .bubble-wrap-header {
     text-align: center;
-    margin: 10px;
+    margin: 5px;
     font-size: 40px;
 }
 
@@ -799,12 +799,31 @@ li.active {
     width: 40px;
     margin: 2px;
     color: purple;
+    opacity: .8;
     cursor: pointer;
-    text-shadow: 2px 2px rgb(160, 84, 160)
+    text-shadow: 2px 2px rgb(160, 84, 160);
 }
 
 .bubble:active {
   transform: translateY(2px);
+}
+
+.inflate-button {
+    margin: 20px 0 0 0;
+    font-size: 15px;
+    border: solid white 2px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Baloo 2', cursive;
+}
+
+.inflate-button:hover {
+    border: 2px solid purple;
+}
+
+.inflate-button:hover > i {
+    color: purple;
 }
 
 /* MOBILE DEVICE STYLING */
