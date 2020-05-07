@@ -803,6 +803,10 @@ li.active {
     text-shadow: 2px 2px rgb(160, 84, 160)
 }
 
+.bubble:active {
+  transform: translateY(2px);
+}
+
 /* MOBILE DEVICE STYLING */
 
 @media screen and (max-width: 600px) {
