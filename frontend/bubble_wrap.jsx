@@ -5,18 +5,40 @@ class BubbleWrap extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            bubbleWrap = this.props.bubbleWrap
+            bubbleWrap: this.props.bubbleWrap
         }
     }
 
+    handlePop(idx) {
+        let temp = this.state.bubbleWrap;
+        temp[idx] = true
 
-
-
+        this.setState({
+            bubbleWrap: temp
+        })
+    }
 
     render() {
         return(
-            <div>
-                I am the bubblewrap component
+            <div className="bubble-wrap-container">
+                <h1 className="bubble-wrap-header">React Bubble Wrap</h1>
+                <div className="bubble-wrap">
+                    {
+                        this.state.bubbleWrap.map( (bubble,idx) => {
+                            return (
+                                <div key={idx} className="bubble" onClick={() => this.handlePop(idx)}>
+                                    {
+                                        bubble ?
+                                            <i className="far fa-circle"></i>
+                                            :
+                                            <i className="fas fa-circle"></i>
+                                    }
+                                </div>
+                            )
+                        })
+                    }
+
+                </div>
             </div>
         )
     }
