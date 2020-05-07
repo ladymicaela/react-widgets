@@ -20,6 +20,7 @@ Currently the collection contains:
 * Dice Roller
 * Notes
 * Countdown
+* Bubble Wrap
 
 ## Technologies
 
